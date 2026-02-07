@@ -13,16 +13,16 @@ const Footer = () => {
         <div className="max-w-md">
           <p className="gallery-label mb-4">End of Documentation</p>
           <p className="gallery-caption">
-            This portfolio represents a semester of exploration, experimentation, 
-            and growth. Each week brought new challenges and discoveries in the 
-            practice of making.
+            This portfolio is a living document, developed over the course of
+            Mastering Tinkering · EIT Digital · Human-Computer Interaction
           </p>
         </div>
-        
+
         <div className="text-right">
           <p className="gallery-caption">
-            Mastering Tinkering<br />
-            Spring 2024
+            Mastering Tinkering
+            <br />
+            Quater 3
           </p>
         </div>
       </motion.div>
