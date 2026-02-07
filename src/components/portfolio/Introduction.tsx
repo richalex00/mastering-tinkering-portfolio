@@ -9,9 +9,9 @@ const Introduction = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="flex flex-col md:flex-row items-start gap-12"
+        className="flex flex-col-reverse md:flex-row items-start gap-12"
       >
-        <div className="flex-1 min-w-0">
+        <div className="flex-1 min-w-0 w-full">
           <h2 className="gallery-heading-md mb-6">About Me</h2>
           <div className="space-y-4 gallery-body text-muted-foreground">
             <p>
@@ -26,7 +26,7 @@ const Introduction = () => {
         </div>
 
         {/* Profile Picture - Circular */}
-        <div className="flex-shrink-0 w-36 h-36 md:w-48 md:h-48 rounded-full bg-secondary overflow-hidden border-2 border-border mt-6 md:mt-14">
+        <div className="flex-shrink-0 self-center md:self-start w-36 h-36 md:w-48 md:h-48 rounded-full bg-secondary overflow-hidden border-2 border-border mt-6 md:mt-14">
           <img
             src={meInCorkNature}
             alt="Profile"
