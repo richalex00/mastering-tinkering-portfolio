@@ -5,13 +5,15 @@ interface ImageWithCaptionProps {
   alt: string;
   caption?: string;
   aspectRatio?: "landscape" | "portrait" | "square";
+  onClick?: () => void;
 }
 
-const ImageWithCaption = ({ 
-  src, 
-  alt, 
-  caption, 
-  aspectRatio = "landscape" 
+const ImageWithCaption = ({
+  src,
+  alt,
+  caption,
+  aspectRatio = "landscape",
+  onClick,
 }: ImageWithCaptionProps) => {
   const aspectClasses = {
     landscape: "aspect-[4/3]",
@@ -31,7 +33,8 @@ const ImageWithCaption = ({
         <img
           src={src}
           alt={alt}
-          className="gallery-image w-full h-full transition-transform duration-700 group-hover:scale-[1.02]"
+          onClick={onClick}
+          className="gallery-image w-full h-full transition-transform duration-700 group-hover:scale-[1.02] cursor-pointer"
           loading="lazy"
         />
       </div>
