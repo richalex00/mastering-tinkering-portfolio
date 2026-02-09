@@ -11,6 +11,13 @@ import week2Sculpture from "@/assets/week2-sculpture.jpg";
 import week3Sketches from "@/assets/week3-sketches.jpg";
 import week3Electronics from "@/assets/week3-electronics.jpg";
 import tinkeringSpaceLec1 from "@/assets/tinkering_spaces.jpeg";
+import sketch1 from "@/assets/sketch 1.jpeg";
+import sketch2 from "@/assets/sketch 2.jpeg";
+import sketch3 from "@/assets/sketch 3.jpeg";
+import sketch4 from "@/assets/sketch 4.jpeg";
+import sketch5 from "@/assets/sketch 5.jpeg";
+import sketch6 from "@/assets/sketch 6.jpeg";
+import tinkeringSpace2 from "@/assets/tinkering space 2.jpeg";
 
 const weekData = [
   {
