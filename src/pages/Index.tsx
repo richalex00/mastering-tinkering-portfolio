@@ -17,6 +17,7 @@ import sketch3 from "@/assets/sketch 3.jpeg";
 import sketch4 from "@/assets/sketch 4.jpeg";
 import sketch5 from "@/assets/sketch 5.jpeg";
 import sketch6 from "@/assets/sketch 6.jpeg";
+import sketchmissing from "@/assets/sketch missing.jpeg";
 import tinkeringSpace2 from "@/assets/tinkering space 2.jpeg";
 
 const weekData = [
@@ -24,34 +25,69 @@ const weekData = [
     weekNumber: 1,
     title: "1.1 Tinkering Spaces - photo safari",
     date: "January 5th, 2026",
-    reflection: `The first week was about getting comfortable with unfamiliar materials. I found myself drawn to the tension between control and accident—how cardboard folds predictably but wire has its own memory. The assignment pushed me to make without planning, which felt uncomfortable but revealing.`,
-    tags: ["Assignment", "Material Exploration"],
+    reflection: `The two main tinkering spaces for me are my room and the designlab. My room is a chaotic haven where creativity thrives amidst the mess. The Designlab, on the other hand, is a more structured environment filled with tools and materials that invite hands-on experimentation.`,
+    tags: ["Environment", "Photo Safari"],
     images: [
       {
         src: tinkeringSpaceLec1,
         alt: "Workshop materials spread on table",
-        caption: "Tinkering examples group task - first lecture",
+        caption: "Tinkering examples group task",
         aspectRatio: "landscape" as const,
-        span: "wide" as const,
       },
       {
-        src: week1Process,
+        src: tinkeringSpace2,
         alt: "Hands working on cardboard prototype",
-        caption: "Building the first prototype without sketching first",
-        aspectRatio: "portrait" as const,
+        caption:
+          "My messy desk in my messy room, the perfect recipie for creativity",
+        aspectRatio: "landscape" as const,
       },
     ],
     title2: "2.2 Design a building block",
-    date2: "January 12th, 2026",
-    reflection2: `Add your reflection for the second assignment here. Describe your learnings, challenges, and insights from this project.`,
-    tags2: ["Assignment", "Add tags here"],
+    date2: "January 9th, 2026",
+    reflection2: `Here is a visual diary of my design process for the building block assignment. I started with broad brainstorming, exploring different shapes and connection methods. I found myself drawn to nature as inspiration, which was a feature in every aspect of the design. I ultimately landed on a final concept that blends organic function and aesthetics.`,
+    tags2: ["Design", "Sketching"],
     images2: [
       {
-        src: week1Materials,
+        src: sketch1,
         alt: "Replace with your image description",
-        caption: "Replace with your caption",
+        caption: "Building block brainstorm",
         aspectRatio: "landscape" as const,
-        span: "wide" as const,
+      },
+      {
+        src: sketch2,
+        alt: "Replace with your image description",
+        caption: "Block shape ideas",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: sketch3,
+        alt: "Replace with your image description",
+        caption: "Connection grooves",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: sketchmissing,
+        alt: "Replace with your image description",
+        caption: "Connection point evolution",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: sketch4,
+        alt: "Replace with your image description",
+        caption: "Myceluim material",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: sketch5,
+        alt: "Replace with your image description",
+        caption: "Interlocking edges",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: sketch6,
+        alt: "Replace with your image description",
+        caption: "Final block concept",
+        aspectRatio: "landscape" as const,
       },
     ],
   },

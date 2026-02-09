@@ -12,7 +12,7 @@ const Header = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-3xl"
       >
-        <p className="gallery-label mb-6">Quater 3 — Process Documentation</p>
+        <p className="gallery-label mb-6">My portfolio</p>
         <h1 className="gallery-heading-xl mb-8">Mastering Tinkering</h1>
         <p className="gallery-body text-muted-foreground max-w-2xl">
           This portfolio documents my journey through{" "}
