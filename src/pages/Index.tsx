@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import Header from "@/components/portfolio/Header";
 import Introduction from "@/components/portfolio/Introduction";
 import WeekSection from "@/components/portfolio/WeekSection";
@@ -91,28 +93,33 @@ const weekData = [
       },
     ],
   },
-  //   {
-  //     weekNumber: 2,
-  //     title: "Collaborative Making",
-  //     date: "January 22, 2024",
-  //     reflection: `Working with a group changed everything. Ideas that seemed fixed in my mind became fluid when shared. We built a kinetic sculpture together, negotiating different visions into something none of us could have made alone. The process taught me that tinkering is inherently social.`,
-  //     tags: ["Group Project", "In-Class Contribution"],
-  //     images: [
-  //       {
-  //         src: week2Collaboration,
-  //         alt: "Students collaborating around a table",
-  //         caption: "Collaborative ideation session with the group",
-  //         aspectRatio: "landscape" as const,
-  //         span: "wide" as const,
-  //       },
-  //       {
-  //         src: week2Sculpture,
-  //         alt: "Wire and paper kinetic sculpture",
-  //         caption: "Final kinetic sculpture — movement activated by breath",
-  //         aspectRatio: "square" as const,
-  //       },
-  //     ],
-  //   },
+  {
+    weekNumber: 2,
+    title: "2.2 Design a building block - fabricate",
+    date: "January 13th, 2026",
+    reflection: `The two main tinkering spaces for me are my room and the designlab. My room is a chaotic haven where creativity thrives amidst the mess. The Designlab, on the other hand, is a more structured environment filled with tools and materials that invite hands-on experimentation.`,
+    tags: ["Fabricate", "Tinkering"],
+    images: [
+      {
+        src: tinkeringSpaceLec1,
+        alt: "Workshop materials spread on table",
+        caption: "Tinkering examples group task",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkeringSpace2,
+        alt: "Hands working on cardboard prototype",
+        caption:
+          "My messy desk in my messy room, the perfect recipie for creativity",
+        aspectRatio: "landscape" as const,
+      },
+    ],
+    title2: "3.1 Properties of Tinkering Materials",
+    date2: "January 16th, 2026",
+    reflection2: `Here is a visual diary of my design process for the building block assignment. I started with broad brainstorming, exploring different shapes and connection methods. I found myself drawn to nature as inspiration, which was a feature in every aspect of the design. I ultimately landed on a final concept that blends organic function and aesthetics.`,
+    tags2: ["Analyse", "Categorise"],
+    images2: [],
+  },
   //   {
   //     weekNumber: 3,
   //     title: "Systems & Circuits",
@@ -137,27 +144,69 @@ const weekData = [
 ];
 
 const Index = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const weekNumbers = weekData.map((week) => week.weekNumber);
+  const defaultWeek = weekNumbers[0] ?? 1;
+  const initialParam = Number(searchParams.get("week"));
+  const initialWeek = weekNumbers.includes(initialParam)
+    ? initialParam
+    : defaultWeek;
+  const [selectedWeek, setSelectedWeek] = useState<number>(initialWeek);
+  const selected = weekData.find((w) => w.weekNumber === selectedWeek);
+
+  useEffect(() => {
+    const paramValue = Number(searchParams.get("week"));
+    const nextWeek = weekNumbers.includes(paramValue)
+      ? paramValue
+      : defaultWeek;
+    if (nextWeek !== selectedWeek) {
+      setSelectedWeek(nextWeek);
+    }
+  }, [defaultWeek, searchParams, selectedWeek, weekNumbers]);
+
   return (
     <main className="min-h-screen bg-background">
       <Header />
       <Introduction />
 
-      {weekData.map((week) => (
+      <div className="gallery-container mt-8 mb-6">
+        <div role="tablist" className="inline-flex rounded-md bg-muted p-1">
+          {weekNumbers.map((n) => {
+            const active = selectedWeek === n;
+            return (
+              <button
+                key={n}
+                role="tab"
+                aria-selected={active}
+                onClick={() => {
+                  setSelectedWeek(n);
+                  setSearchParams({ week: String(n) });
+                }}
+                className={`px-4 py-2 rounded-md focus:outline-none ${active ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+              >
+                Week {n}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {selected && (
         <WeekSection
-          key={week.weekNumber}
-          weekNumber={week.weekNumber}
-          title={week.title}
-          date={week.date}
-          reflection={week.reflection}
-          tags={week.tags}
-          images={week.images}
-          title2={week.title2}
-          date2={week.date2}
-          reflection2={week.reflection2}
-          tags2={week.tags2}
-          images2={week.images2}
+          key={selected.weekNumber}
+          weekNumber={selected.weekNumber}
+          title={selected.title}
+          date={selected.date}
+          reflection={selected.reflection ?? ""}
+          tags={selected.tags}
+          images={selected.images}
+          title2={selected.title2}
+          date2={selected.date2}
+          reflection2={selected.reflection2}
+          tags2={selected.tags2}
+          images2={selected.images2}
         />
-      ))}
+      )}
 
       <Footer />
     </main>
