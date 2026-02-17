@@ -7,7 +7,7 @@ export interface GalleryImage {
   src: string;
   alt: string;
   caption?: string;
-  aspectRatio?: "landscape" | "portrait" | "square";
+  aspectRatio?: "landscape" | "portrait" | "square" | "auto";
   span?: "normal" | "wide";
 }
 

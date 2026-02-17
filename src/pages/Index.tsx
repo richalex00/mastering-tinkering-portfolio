@@ -19,6 +19,20 @@ import sketch3 from "@/assets/sketch 3.jpeg";
 import sketch4 from "@/assets/sketch 4.jpeg";
 import sketch5 from "@/assets/sketch 5.jpeg";
 import sketch6 from "@/assets/sketch 6.jpeg";
+import hex1 from "@/assets/hex1.jpeg";
+import hex2 from "@/assets/hex2.jpeg";
+import hex3 from "@/assets/hex3.jpeg";
+import hex4 from "@/assets/hex4.jpeg";
+import hex5 from "@/assets/hex5.jpeg";
+import hex6 from "@/assets/hex6.jpeg";
+import materials from "@/assets/materials.jpeg";
+import table from "@/assets/table.png";
+import tinkering1 from "@/assets/tinkering1.jpeg";
+import tinkering2 from "@/assets/tinkering2.jpeg";
+import tinkering3 from "@/assets/tinkering3.jpeg";
+import tinkering4 from "@/assets/tinkering4.jpeg";
+import tinkering5 from "@/assets/tinkering5.jpeg";
+import tinkering6 from "@/assets/tinkering6.jpeg";
 import sketchmissing from "@/assets/sketch missing.jpeg";
 import tinkeringSpace2 from "@/assets/tinkering space 2.jpeg";
 
@@ -97,28 +111,105 @@ const weekData = [
     weekNumber: 2,
     title: "2.2 Design a building block - fabricate",
     date: "January 13th, 2026",
-    reflection: `The two main tinkering spaces for me are my room and the designlab. My room is a chaotic haven where creativity thrives amidst the mess. The Designlab, on the other hand, is a more structured environment filled with tools and materials that invite hands-on experimentation.`,
+    reflection: `For this tinkering prototype, I worked with the materials I had readily available to quickly explore and test my concept. I used oven-bake clay and bent paperclips to form the block structure, embedding magnets so the piece could attach to metal surfaces, and incorporating small jewellery hooks as connection elements. 
+
+This first physical iteration demonstrates the core functional idea: the block can be fixed onto a surface via magnets, while the hooks act as simple attachment points for components such as electronic wiring or modular add-ons. Rather than aiming for a polished finish, the focus of this prototype was rapid experimentation, testing joinery logic, and evaluating how the interaction would work in practice.
+
+In future iterations, I plan to refine the geometry and durability of the design by producing a 3D-printed version.`,
     tags: ["Fabricate", "Tinkering"],
     images: [
       {
-        src: tinkeringSpaceLec1,
-        alt: "Workshop materials spread on table",
-        caption: "Tinkering examples group task",
+        src: materials,
+        alt: "Materials used for tinkering",
+        caption: "Materials used for tinkering",
         aspectRatio: "landscape" as const,
       },
       {
-        src: tinkeringSpace2,
-        alt: "Hands working on cardboard prototype",
+        src: hex1,
+        alt: "Hexagon shape outline",
+        caption: "Hexagon shape outline",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: hex2,
+        alt: "Clay hexagon formed",
+        caption: "Clay hexagon formed",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: hex3,
+        alt: "Hexagon with added paperclip wiring",
+        caption: "Added paperclip wiring",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: hex4,
+        alt: "Embedded magnets",
+        caption: "Embedded magnets",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: hex5,
+        alt: "Interlocking edges",
+        caption: "Covering top layer",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: hex6,
+        alt: "Replace with your image description",
         caption:
-          "My messy desk in my messy room, the perfect recipie for creativity",
+          "After having been cooked in the oven and added hooks for space to add wiring, hexagon sticks to fridge",
         aspectRatio: "landscape" as const,
       },
     ],
     title2: "3.1 Properties of Tinkering Materials",
     date2: "January 16th, 2026",
-    reflection2: `Here is a visual diary of my design process for the building block assignment. I started with broad brainstorming, exploring different shapes and connection methods. I found myself drawn to nature as inspiration, which was a feature in every aspect of the design. I ultimately landed on a final concept that blends organic function and aesthetics.`,
+    reflection2: `This table describes the materials we tinkered with during the lecture and summarizes what we observed while using them.`,
     tags2: ["Analyse", "Categorise"],
-    images2: [],
+    images2: [
+      {
+        src: table,
+        alt: "Table of materials and their properties",
+        caption: "Table of materials and their properties",
+        aspectRatio: "auto" as const,
+      },
+      {
+        src: tinkering1,
+        alt: "Tinkering 1",
+        caption: "Lego",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkering2,
+        alt: "Tinkering 2",
+        caption: "Littlebits",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkering3,
+        alt: "Tinkering 3",
+        caption: "Tinkering table",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkering4,
+        alt: "Tinkering 4",
+        caption: "Mechano",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkering5,
+        alt: "Tinkering 5",
+        caption: "Makeblock",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkering6,
+        alt: "Tinkering 6",
+        caption: "Arduino",
+        aspectRatio: "landscape" as const,
+      },
+    ],
   },
   //   {
   //     weekNumber: 3,

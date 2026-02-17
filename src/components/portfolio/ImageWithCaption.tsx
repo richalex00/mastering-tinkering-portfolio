@@ -4,7 +4,7 @@ interface ImageWithCaptionProps {
   src: string;
   alt: string;
   caption?: string;
-  aspectRatio?: "landscape" | "portrait" | "square";
+  aspectRatio?: "landscape" | "portrait" | "square" | "auto";
   onClick?: () => void;
 }
 
@@ -19,7 +19,9 @@ const ImageWithCaption = ({
     landscape: "aspect-[4/3]",
     portrait: "aspect-[3/4]",
     square: "aspect-square",
+    auto: "",
   };
+  const isAuto = aspectRatio === "auto";
 
   return (
     <motion.figure
@@ -29,12 +31,16 @@ const ImageWithCaption = ({
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="group"
     >
-      <div className={`${aspectClasses[aspectRatio]} overflow-hidden bg-muted`}>
+      <div
+        className={`${aspectClasses[aspectRatio]} ${isAuto ? "" : "overflow-hidden"} bg-muted`}
+      >
         <img
           src={src}
           alt={alt}
           onClick={onClick}
-          className="gallery-image w-full h-full transition-transform duration-700 group-hover:scale-[1.02] cursor-pointer"
+          className={`gallery-image w-full ${
+            isAuto ? "h-auto object-contain" : "h-full"
+          } transition-transform duration-700 group-hover:scale-[1.02] cursor-pointer`}
           loading="lazy"
         />
       </div>
