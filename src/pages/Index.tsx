@@ -33,10 +33,42 @@ import tinkering3 from "@/assets/tinkering3.jpeg";
 import tinkering4 from "@/assets/tinkering4.jpeg";
 import tinkering5 from "@/assets/tinkering5.jpeg";
 import tinkering6 from "@/assets/tinkering6.jpeg";
+import tinkeringGroup1 from "@/assets/tinkering group 1.jpeg";
+import tinkeringGroup2 from "@/assets/tinkering group 2.jpeg";
+import tinkeringGroup3 from "@/assets/tinkering group 3.jpeg";
+import tinkeringGroupSession from "@/assets/tinkering group session.jpeg";
 import sketchmissing from "@/assets/sketch missing.jpeg";
 import tinkeringSpace2 from "@/assets/tinkering space 2.jpeg";
 
-const weekData = [
+interface WeekDataEntry {
+  weekNumber: number;
+  title: string;
+  date?: string;
+  reflection: string;
+  tags?: string[];
+  images: {
+    src: string;
+    alt: string;
+    caption?: string;
+    aspectRatio?: "landscape" | "portrait" | "square" | "auto";
+    span?: "normal" | "wide";
+  }[];
+  title2?: string;
+  date2?: string;
+  reflection2?: string;
+  tags2?: string[];
+  images2?: {
+    src: string;
+    alt: string;
+    caption?: string;
+    aspectRatio?: "landscape" | "portrait" | "square" | "auto";
+    span?: "normal" | "wide";
+  }[];
+  postTitle2?: string;
+  postReflection2?: string;
+}
+
+const weekData: WeekDataEntry[] = [
   {
     weekNumber: 1,
     title: "1.1 Tinkering Spaces - photo safari",
@@ -211,27 +243,125 @@ In future iterations, I plan to refine the geometry and durability of the design
       },
     ],
   },
-  //   {
-  //     weekNumber: 3,
-  //     title: "Systems & Circuits",
-  //     date: "January 29, 2024",
-  //     reflection: `This week introduced electronics as a material. The resistance of the medium—literal and figurative—forced a slower pace. Each failed circuit was a lesson in patience. I'm beginning to understand that tinkering isn't about speed; it's about attention and responsiveness to what the materials tell you.`,
-  //     tags: ["Assignment", "Electronics", "Reflection"],
-  //     images: [
-  //       {
-  //         src: week3Sketches,
-  //         alt: "Open sketchbook with mechanical drawings",
-  //         caption: "Concept sketches for the motorized mechanism",
-  //         aspectRatio: "landscape" as const,
-  //       },
-  //       {
-  //         src: week3Electronics,
-  //         alt: "Electronic components arranged artistically",
-  //         caption: "Component study — understanding the parts before assembly",
-  //         aspectRatio: "portrait" as const,
-  //       },
-  //     ],9
-  //   },
+  {
+    weekNumber: 3,
+    title: "2.3 Design a building block - make it interoperable",
+    date: "February 24th, 2026",
+    reflection: `This week introduced electronics as a material. The resistance of the medium—literal and figurative—forced a slower pace. Each failed circuit was a lesson in patience. I'm beginning to understand that tinkering isn't about speed; it's about attention and responsiveness to what the materials tell you.`,
+    tags: ["Assignment", "Electronics", "Reflection"],
+    images: [
+      {
+        src: week3Sketches,
+        alt: "Week 3 placeholder image 1",
+        caption: "Week 3 photo slot 1",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: week3Electronics,
+        alt: "Week 3 placeholder image 2",
+        caption: "Week 3 photo slot 2",
+        aspectRatio: "landscape" as const,
+      },
+    ],
+    title2: "5.0 Group work",
+    date2: "February 17th, 2026",
+    reflection2: `In this lecture, we did a hands-on group participation activity where we tinkered with cardboard structures and electronic motors to bring movement into our prototype ideas. It was a fun and collaborative session that blended quick making, testing, and creative problem-solving.`,
+    tags2: ["Group Participation", "Cardboard", "Electronic Motors"],
+    images2: [
+      {
+        src: tinkeringGroupSession,
+        alt: "Group tinkering session overview",
+        caption: "Group tinkering session",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkeringGroup1,
+        alt: "Tinkering group work 1",
+        caption: "Tinkering group 1",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkeringGroup2,
+        alt: "Tinkering group work 2",
+        caption: "Tinkering group 2",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkeringGroup3,
+        alt: "Tinkering group work 3",
+        caption: "Tinkering group 3",
+        aspectRatio: "landscape" as const,
+      },
+    ],
+    postTitle2: "POEMS Observation Report",
+    postReflection2: `Project: Cardboard Vitruvian Man with Motorized Limbs
+Context: Group tinkering session involving mechanical construction and basic electronics
+
+
+P — Participants
+
+The session involved a small group of learners working collaboratively. Participants had mixed levels of prior experience with electronics, crafting, and mechanical design. Roles emerged organically, including designing the cardboard structure, assembling electronic components, and testing motor movement. Collaboration and peer learning were central features of the activity.
+
+Validity note: Multiple participants contributed observations, reducing single-observer bias.
+Transferability note: The activity is suitable for learners with varied technical backgrounds.
+
+
+O — Objects
+
+The main artifact produced was a cardboard Vitruvian Man model with movable arms and legs. Materials included:
+
+  - Cardboard (body and limbs)
+  - Small electronic motors
+  - Power source (e.g., batteries)
+  - Wires and simple connectors
+  - Fasteners (brads, string, or joints enabling rotation)
+  - The limbs were attached in a way that allowed rotational movement when motors were activated.
+
+Reproducibility note: All materials are low-cost and widely available, making the setup easy to replicate.
+
+
+E — Environment
+
+  - The tinkering session took place in an indoor workspace with tables, shared tools, and enough room for group interaction. The environment allowed participants to freely move, test components, and iterate on their design without strict time pressure.
+
+  Transferability note: The activity can be reproduced in classrooms, makerspaces, or informal learning environments.
+
+
+M — Messages
+
+Several key messages emerged through the activity:
+
+  - Mechanical movement can be achieved using simple materials combined with basic electronics.
+  - Trial-and-error is an effective strategy in tinkering and prototyping.
+  - Collaboration improves problem-solving, especially when combining artistic and technical tasks.
+  - Participants communicated frequently, sharing ideas, troubleshooting issues, and reflecting on what worked or failed.
+
+  Validity note: Observed behaviors aligned with participants’ verbal reflections during the session.
+
+
+S — Services (or Systems / Skills)
+
+The session supported the development of multiple skills:
+
+  - Basic understanding of motor-driven movement
+  - Hands-on problem solving
+  - Collaborative design and iterative improvement
+  - Connecting abstract concepts (human proportions, motion) to physical construction
+  - The system as a whole demonstrated how artistic concepts (Vitruvian Man) can be integrated with simple engineering principles.
+  - Reproducibility note: Following the same steps and division of tasks would likely lead to similar learning outcomes in another group.
+
+  
+Reflection on Quality Criteria
+
+Transferability:
+The activity can be adapted to different age groups, learning contexts, and levels of technical complexity by changing materials or motor types.
+
+Validity:
+Observations were based on direct participation, group discussion, and visible outcomes (working motorized limbs), ensuring alignment between observed actions and conclusions.
+
+Reproducibility:
+Because the materials, environment, and process are clearly described, another group could replicate the session and reasonably expect comparable results.`,
+  },
 ];
 
 const Index = () => {
@@ -296,6 +426,8 @@ const Index = () => {
           reflection2={selected.reflection2}
           tags2={selected.tags2}
           images2={selected.images2}
+          postTitle2={selected.postTitle2}
+          postReflection2={selected.postReflection2}
         />
       )}
 

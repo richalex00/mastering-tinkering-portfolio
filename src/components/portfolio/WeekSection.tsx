@@ -13,6 +13,8 @@ interface WeekSectionProps {
   reflection2?: string;
   images2?: GalleryImage[];
   tags2?: string[];
+  postTitle2?: string;
+  postReflection2?: string;
 }
 
 const WeekSection = ({
@@ -27,6 +29,8 @@ const WeekSection = ({
   reflection2,
   images2,
   tags2,
+  postTitle2,
+  postReflection2,
 }: WeekSectionProps) => {
   return (
     <section className="gallery-container py-16 md:py-24">
@@ -116,6 +120,23 @@ const WeekSection = ({
 
           {/* Second Image Gallery */}
           {images2 && <ImageGallery images={images2} />}
+
+          {postReflection2 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="mt-10 md:mt-14"
+            >
+              {postTitle2 && (
+                <h3 className="gallery-heading-md mb-4">{postTitle2}</h3>
+              )}
+              <p className="gallery-body text-muted-foreground leading-relaxed whitespace-pre-line">
+                {postReflection2}
+              </p>
+            </motion.div>
+          )}
         </>
       )}
 
