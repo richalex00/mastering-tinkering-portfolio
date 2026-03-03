@@ -12,6 +12,8 @@ import connectionBlock3 from "@/assets/connection block 3.jpeg";
 import connectionBlock4 from "@/assets/connection block 4.jpeg";
 import connectionBlock5 from "@/assets/connection block 5.jpeg";
 import connectionBlock6 from "@/assets/connection block 6.jpeg";
+import connectionBlockSketch1 from "@/assets/connection block sketch 1.jpeg";
+import connectionBlockSketch2 from "@/assets/connection block sketch 2.jpeg";
 import hex1 from "@/assets/hex1.jpeg";
 import hex2 from "@/assets/hex2.jpeg";
 import hex3 from "@/assets/hex3.jpeg";
@@ -256,6 +258,18 @@ The resulting connection block is a clay cube with channels running through four
 The design emphasizes adaptability over precision. Instead of defining a single way of building, the block functions as infrastructure for experimentation`,
     tags: ["Interoperable Design", "Iterative Prototyping"],
     images: [
+      {
+        src: connectionBlockSketch1,
+        alt: "Connection block sketch image 1",
+        caption: "Connection block sketch 1",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: connectionBlockSketch2,
+        alt: "Connection block sketch image 2",
+        caption: "Connection block sketch 2",
+        aspectRatio: "landscape" as const,
+      },
       {
         src: connectionBlock1,
         alt: "Connection block prototype image 1",
