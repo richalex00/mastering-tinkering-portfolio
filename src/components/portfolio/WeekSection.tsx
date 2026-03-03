@@ -73,7 +73,7 @@ const WeekSection = ({
             ))}
           </div>
         )}
-        <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed">
+        <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line">
           {reflection}
         </p>
       </motion.div>
@@ -113,7 +113,7 @@ const WeekSection = ({
               </div>
             )}
 
-            <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed">
+            <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line">
               {reflection2}
             </p>
           </motion.div>

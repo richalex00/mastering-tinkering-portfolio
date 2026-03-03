@@ -6,19 +6,12 @@ import WeekSection from "@/components/portfolio/WeekSection";
 import Footer from "@/components/portfolio/Footer";
 
 // Import images
-import week1Materials from "@/assets/week1-materials.jpg";
-import week1Process from "@/assets/week1-process.jpg";
-import week2Collaboration from "@/assets/week2-collaboration.jpg";
-import week2Sculpture from "@/assets/week2-sculpture.jpg";
-import week3Sketches from "@/assets/week3-sketches.jpg";
-import week3Electronics from "@/assets/week3-electronics.jpg";
-import tinkeringSpaceLec1 from "@/assets/tinkering_spaces.jpeg";
-import sketch1 from "@/assets/sketch 1.jpeg";
-import sketch2 from "@/assets/sketch 2.jpeg";
-import sketch3 from "@/assets/sketch 3.jpeg";
-import sketch4 from "@/assets/sketch 4.jpeg";
-import sketch5 from "@/assets/sketch 5.jpeg";
-import sketch6 from "@/assets/sketch 6.jpeg";
+import connectionBlock1 from "@/assets/connection block 1.jpeg";
+import connectionBlock2 from "@/assets/connection block 2.jpeg";
+import connectionBlock3 from "@/assets/connection block 3.jpeg";
+import connectionBlock4 from "@/assets/connection block 4.jpeg";
+import connectionBlock5 from "@/assets/connection block 5.jpeg";
+import connectionBlock6 from "@/assets/connection block 6.jpeg";
 import hex1 from "@/assets/hex1.jpeg";
 import hex2 from "@/assets/hex2.jpeg";
 import hex3 from "@/assets/hex3.jpeg";
@@ -26,7 +19,15 @@ import hex4 from "@/assets/hex4.jpeg";
 import hex5 from "@/assets/hex5.jpeg";
 import hex6 from "@/assets/hex6.jpeg";
 import materials from "@/assets/materials.jpeg";
+import sketch1 from "@/assets/sketch 1.jpeg";
+import sketch2 from "@/assets/sketch 2.jpeg";
+import sketch3 from "@/assets/sketch 3.jpeg";
+import sketch4 from "@/assets/sketch 4.jpeg";
+import sketch5 from "@/assets/sketch 5.jpeg";
+import sketch6 from "@/assets/sketch 6.jpeg";
+import sketchmissing from "@/assets/sketch missing.jpeg";
 import table from "@/assets/table.png";
+import tinkeringSpaceLec1 from "@/assets/tinkering_spaces.jpeg";
 import tinkering1 from "@/assets/tinkering1.jpeg";
 import tinkering2 from "@/assets/tinkering2.jpeg";
 import tinkering3 from "@/assets/tinkering3.jpeg";
@@ -37,7 +38,6 @@ import tinkeringGroup1 from "@/assets/tinkering group 1.jpeg";
 import tinkeringGroup2 from "@/assets/tinkering group 2.jpeg";
 import tinkeringGroup3 from "@/assets/tinkering group 3.jpeg";
 import tinkeringGroupSession from "@/assets/tinkering group session.jpeg";
-import sketchmissing from "@/assets/sketch missing.jpeg";
 import tinkeringSpace2 from "@/assets/tinkering space 2.jpeg";
 
 interface WeekDataEntry {
@@ -247,19 +247,49 @@ In future iterations, I plan to refine the geometry and durability of the design
     weekNumber: 3,
     title: "2.3 Design a building block - make it interoperable",
     date: "February 24th, 2026",
-    reflection: `This week introduced electronics as a material. The resistance of the medium—literal and figurative—forced a slower pace. Each failed circuit was a lesson in patience. I'm beginning to understand that tinkering isn't about speed; it's about attention and responsiveness to what the materials tell you.`,
-    tags: ["Assignment", "Electronics", "Reflection"],
+    reflection: `This assignment explored how a building block can become interoperable by designing an interface that allows it to connect with different materials and systems. Inspired by the idea of a universal construction kit, I focused on creating a component that acts as a connector rather than a final object.
+
+My initial prototype consisted of hexagonal clay tiles with embedded magnets and jewelry hooks intended for threading wires. While this version enabled attachment, the connections were mostly surface-level and limited in flexibility. Through testing and reflection, I shifted toward designing a more neutral intermediary element.
+
+The resulting connection block is a clay cube with channels running through four sides, allowing structural elements or wires to pass directly through the form. Magnets embedded on the opposing flat faces enable quick alignment and reversible connections between modules. This combination supports both mechanical and potential electrical linking, allowing blocks to be rearranged, extended, or combined with other materials.
+
+The design emphasizes adaptability over precision. Instead of defining a single way of building, the block functions as infrastructure for experimentation`,
+    tags: ["Interoperable Design", "Iterative Prototyping"],
     images: [
       {
-        src: week3Sketches,
-        alt: "Week 3 placeholder image 1",
-        caption: "Week 3 photo slot 1",
+        src: connectionBlock1,
+        alt: "Connection block prototype image 1",
+        caption: "Connection block 1",
         aspectRatio: "landscape" as const,
       },
       {
-        src: week3Electronics,
-        alt: "Week 3 placeholder image 2",
-        caption: "Week 3 photo slot 2",
+        src: connectionBlock2,
+        alt: "Connection block prototype image 2",
+        caption: "Connection block 2",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: connectionBlock3,
+        alt: "Connection block prototype image 3",
+        caption: "Connection block 3",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: connectionBlock4,
+        alt: "Connection block prototype image 4",
+        caption: "Connection block 4",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: connectionBlock5,
+        alt: "Connection block prototype image 5",
+        caption: "Connection block 5",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: connectionBlock6,
+        alt: "Connection block prototype image 6",
+        caption: "Connection block 6",
         aspectRatio: "landscape" as const,
       },
     ],
