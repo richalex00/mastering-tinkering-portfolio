@@ -28,6 +28,7 @@ import sketch4 from "@/assets/sketch 4.jpeg";
 import sketch5 from "@/assets/sketch 5.jpeg";
 import sketch6 from "@/assets/sketch 6.jpeg";
 import sketchmissing from "@/assets/sketch missing.jpeg";
+import table2 from "@/assets/table 2.png";
 import table from "@/assets/table.png";
 import tinkeringSpaceLec1 from "@/assets/tinkering_spaces.jpeg";
 import tinkering1 from "@/assets/tinkering1.jpeg";
@@ -41,6 +42,9 @@ import tinkeringGroup2 from "@/assets/tinkering group 2.jpeg";
 import tinkeringGroup3 from "@/assets/tinkering group 3.jpeg";
 import tinkeringGroupSession from "@/assets/tinkering group session.jpeg";
 import tinkeringSpace2 from "@/assets/tinkering space 2.jpeg";
+import lego1 from "@/assets/lego 1.jpeg";
+import lego2 from "@/assets/lego 2.jpeg";
+import lego3 from "@/assets/lego 3.jpeg";
 
 interface WeekDataEntry {
   weekNumber: number;
@@ -405,6 +409,73 @@ Observations were based on direct participation, group discussion, and visible o
 
 Reproducibility:
 Because the materials, environment, and process are clearly described, another group could replicate the session and reasonably expect comparable results.`,
+  },
+  {
+    weekNumber: 4,
+    title: "3.2 Properties of Tinkering Materials - extension",
+    date: "March 8th, 2026",
+    reflection: `To expand the analysis, several additional properties were added to the material table. These focus on how well materials support experimentation and iterative exploration during tinkering. The new properties evaluate aspects such as how easily constructions can be modified, how quickly ideas can be tested, and how understandable the system is for the user.
+    
+Reversibility - How easily constructions can be disassembled, modified, or rebuilt without damaging parts. High reversibility supports experimentation and iteration because users can undo mistakes and quickly test alternative designs.
+
+Iteration speed - The speed at which ideas can be built, modified, and tested. Materials with high iteration speed allow rapid experimentation and encourage playful exploration.
+
+Transparency - The degree to which the inner workings of a system are visible and understandable. Transparent systems help learners understand how components function and interact.`,
+    tags: ["Materials", "Extension"],
+    images: [
+      {
+        src: table2,
+        alt: "Extended materials properties notes",
+        caption: "Extended material properties overview",
+        aspectRatio: "auto" as const,
+      },
+      {
+        src: tinkering3,
+        alt: "Material experimentation setup",
+        caption: "Material testing setup",
+        aspectRatio: "landscape" as const,
+      },
+    ],
+    title2: "4.0 Scaffolding material: programming metaphor",
+    date2: "March 8th, 2026",
+    reflection2: `For this assignment I created a physical metaphor of how an API works using LEGO. APIs allow different software systems to communicate with each other in a controlled and structured way. My model represents the process of a client application sending a request to a server, the request being checked and processed, and a response being returned.
+
+On the left side of the model is a blue building, which represents the client application (for example a website or mobile app). This is the system that wants to access data or functionality from another system.
+
+A minifigure pushing a trolley with a blue block represents the request being sent from the client. The blue block symbolizes the data or instruction that the client wants to send through the API.
+
+Before the request can enter the system, it must pass an authentication check. This is represented by the guard minifigure holding a speaker, who verifies whether the request is allowed to pass. This reflects how APIs often require authentication such as API keys or tokens.
+
+On both sides of the gate are boxes representing the API specification or contract. These symbolize the rules that define how requests must be formatted and what actions are allowed. If a request does not follow these rules, it will be rejected.
+
+The grey arches form the gate, representing the API itself. The API acts as the controlled interface between the client and the server. Requests cannot directly access the server; they must go through this gateway.
+
+Behind the gate is the processing system, represented by the green and red robotic structure connected with pipes. This represents the hidden backend logic that handles the request. The pipes connect to blocks that represent the server and database, where data is stored and processed.
+
+Finally, the system produces a response, shown by a crate containing a green block (success) or a red block (failure). The guard returns the appropriate block to the client depending on whether the request was successfully processed.
+
+Overall, this LEGO model demonstrates how APIs manage communication between systems through requests, authentication, rules, processing, and responses, while keeping the internal workings of the server hidden from the client.`,
+    tags2: ["Scaffolding", "Programming Metaphor"],
+    images2: [
+      {
+        src: lego1,
+        alt: "Lego scaffolding material image 1",
+        caption: "Lego 1",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: lego2,
+        alt: "Lego scaffolding material image 2",
+        caption: "Lego 2",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: lego3,
+        alt: "Lego scaffolding material image 3",
+        caption: "Lego 3",
+        aspectRatio: "landscape" as const,
+      },
+    ],
   },
 ];
 
