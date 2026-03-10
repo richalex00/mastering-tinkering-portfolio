@@ -438,23 +438,25 @@ Transparency - The degree to which the inner workings of a system are visible an
     ],
     title2: "4.0 Scaffolding material: programming metaphor",
     date2: "March 8th, 2026",
-    reflection2: `For this assignment I created a physical metaphor of how an API works using LEGO. APIs allow different software systems to communicate with each other in a controlled and structured way. My model represents the process of a client application sending a request to a server, the request being checked and processed, and a response being returned.
+    reflection2: `For this assignment I designed a physical metaphor that explains how an API enables communication between different software systems. APIs are an important programming concept because they allow applications to exchange information through a structured interface without needing direct access to each other’s internal systems.
 
-On the left side of the model is a blue building, which represents the client application (for example a website or mobile app). This is the system that wants to access data or functionality from another system.
+I used LEGO as the material because its affordances make it easy to represent systems and interactions in a tangible way. LEGO bricks can be assembled, separated, and moved, which mirrors how components in software systems interact while remaining independent. Minifigures, gates, and blocks make it possible to physically demonstrate the flow of information through the system.
 
-A minifigure pushing a trolley with a blue block represents the request being sent from the client. The blue block symbolizes the data or instruction that the client wants to send through the API.
+The blue building on the left represents the client application (such as a website or mobile app). This is the system that wants to request information or functionality from another system.
 
-Before the request can enter the system, it must pass an authentication check. This is represented by the guard minifigure holding a speaker, who verifies whether the request is allowed to pass. This reflects how APIs often require authentication such as API keys or tokens.
+A minifigure pushing a trolley with a blue block represents a request. The blue block symbolizes the data or instruction being sent from the client to the API.
 
-On both sides of the gate are boxes representing the API specification or contract. These symbolize the rules that define how requests must be formatted and what actions are allowed. If a request does not follow these rules, it will be rejected.
+Before the request can continue, it must pass an authentication check, represented by the guard minifigure holding a speaker. This reflects how APIs often require authentication (such as API keys or tokens) to verify whether the request is allowed.
 
-The grey arches form the gate, representing the API itself. The API acts as the controlled interface between the client and the server. Requests cannot directly access the server; they must go through this gateway.
+The grey arches represent the API gateway, which acts as the controlled interface between the client and the server. Requests must pass through this gate rather than directly accessing the backend system.
 
-Behind the gate is the processing system, represented by the green and red robotic structure connected with pipes. This represents the hidden backend logic that handles the request. The pipes connect to blocks that represent the server and database, where data is stored and processed.
+The boxes beside the gate represent the API specification or contract, which defines the rules for how requests must be structured and what actions are allowed.
 
-Finally, the system produces a response, shown by a crate containing a green block (success) or a red block (failure). The guard returns the appropriate block to the client depending on whether the request was successfully processed.
+Behind the gate is the backend processing system, represented by a robotic structure connected with pipes. This symbolizes the internal logic that processes the request and interacts with the server or database, represented by the connected blocks.
 
-Overall, this LEGO model demonstrates how APIs manage communication between systems through requests, authentication, rules, processing, and responses, while keeping the internal workings of the server hidden from the client.`,
+Finally, the system produces a response, shown as a crate containing either a green block (success) or a red block (failure). This response is returned to the client after the request has been processed.
+
+This metaphor focuses on the programming concepts of request/response communication, authentication, system interfaces, and backend processing, demonstrating how APIs control the flow of information between software systems.`,
     tags2: ["Scaffolding", "Programming Metaphor"],
     images2: [
       {
