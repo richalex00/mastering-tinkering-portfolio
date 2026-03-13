@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import ImageGallery, { GalleryImage } from "./ImageGallery";
 
 interface WeekSectionProps {
-  weekNumber: number;
+  weekNumber: number | string;
+  sectionLabel?: string;
   title: string;
   date?: string;
   reflection: string;
@@ -19,6 +20,7 @@ interface WeekSectionProps {
 
 const WeekSection = ({
   weekNumber,
+  sectionLabel = "Week",
   title,
   date,
   reflection,
@@ -42,7 +44,9 @@ const WeekSection = ({
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="flex items-baseline gap-4 mb-4">
-          <span className="gallery-label">Week {weekNumber}</span>
+          <span className="gallery-label">
+            {sectionLabel} {weekNumber}
+          </span>
           {date && (
             <>
               <span className="text-gallery-stone">·</span>
@@ -120,28 +124,28 @@ const WeekSection = ({
 
           {/* Second Image Gallery */}
           {images2 && <ImageGallery images={images2} />}
-
-          {postReflection2 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="mt-10 md:mt-14"
-            >
-              {postTitle2 && (
-                <h3 className="gallery-heading-md mb-4">{postTitle2}</h3>
-              )}
-              <p className="gallery-body text-muted-foreground leading-relaxed whitespace-pre-line">
-                {postReflection2}
-              </p>
-            </motion.div>
-          )}
         </>
       )}
 
+      {postReflection2 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className={title2 ? "mt-10 md:mt-14" : "mt-16 md:mt-20"}
+        >
+          {postTitle2 && (
+            <h3 className="gallery-heading-md mb-4">{postTitle2}</h3>
+          )}
+          <p className="gallery-body text-muted-foreground leading-relaxed whitespace-pre-line">
+            {postReflection2}
+          </p>
+        </motion.div>
+      )}
+
       {/* Final Section Divider (Only if no second assignment) */}
-      {!title2 && (
+      {!title2 && !postReflection2 && (
         <motion.div
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}

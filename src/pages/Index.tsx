@@ -481,26 +481,200 @@ This metaphor focuses on the programming concepts of request/response communicat
   },
 ];
 
+interface SectionDataEntry {
+  id: string;
+  order: number;
+  sectionNumber: string;
+  sectionEntry: number;
+  title: string;
+  date?: string;
+  reflection: string;
+  tags?: string[];
+  images: WeekDataEntry["images"];
+  postTitle?: string;
+  postReflection?: string;
+}
+
+const sectionTitleRegex = /^(\d+(?:\.\d+)?)\s+(.*)$/;
+
+const splitSectionTitle = (rawTitle: string) => {
+  const match = rawTitle.match(sectionTitleRegex);
+  if (!match) {
+    return {
+      sectionNumber: rawTitle,
+      cleanTitle: rawTitle,
+    };
+  }
+
+  return {
+    sectionNumber: match[1],
+    cleanTitle: match[2],
+  };
+};
+
+const sectionSortValue = (sectionNumber: string) => {
+  const [majorRaw, minorRaw = "0"] = sectionNumber.split(".");
+  const major = Number(majorRaw);
+  const minor = Number(minorRaw);
+
+  if (Number.isNaN(major) || Number.isNaN(minor)) {
+    return Number.MAX_SAFE_INTEGER;
+  }
+
+  return major * 1000 + minor;
+};
+
+const sectionsData: SectionDataEntry[] = weekData.flatMap((week, weekIndex) => {
+  const primary = splitSectionTitle(week.title);
+  const entries: SectionDataEntry[] = [
+    {
+      id: `${week.weekNumber}-1`,
+      order: weekIndex * 2,
+      sectionNumber: primary.sectionNumber,
+      sectionEntry: 1,
+      title: primary.cleanTitle,
+      date: week.date,
+      reflection: week.reflection,
+      tags: week.tags,
+      images: week.images,
+    },
+  ];
+
+  if (week.title2 && week.reflection2 && week.images2) {
+    const secondary = splitSectionTitle(week.title2);
+    entries.push({
+      id: `${week.weekNumber}-2`,
+      order: weekIndex * 2 + 1,
+      sectionNumber: secondary.sectionNumber,
+      sectionEntry: 1,
+      title: secondary.cleanTitle,
+      date: week.date2,
+      reflection: week.reflection2,
+      tags: week.tags2,
+      images: week.images2,
+      postTitle: week.postTitle2,
+      postReflection: week.postReflection2,
+    });
+  }
+
+  return entries;
+});
+
+const sortedSectionsData = [...sectionsData]
+  .sort((a, b) => {
+    const valueDiff =
+      sectionSortValue(a.sectionNumber) - sectionSortValue(b.sectionNumber);
+    if (valueDiff !== 0) {
+      return valueDiff;
+    }
+
+    return a.order - b.order;
+  })
+  .map((section) => {
+    const duplicatesBefore = sectionsData.filter(
+      (s) =>
+        s.sectionNumber === section.sectionNumber &&
+        (sectionSortValue(s.sectionNumber) <
+          sectionSortValue(section.sectionNumber) ||
+          (sectionSortValue(s.sectionNumber) ===
+            sectionSortValue(section.sectionNumber) &&
+            s.order <= section.order)),
+    ).length;
+
+    return {
+      ...section,
+      sectionEntry: duplicatesBefore,
+    };
+  });
+
+const sectionNumberCounts = sortedSectionsData.reduce<Record<string, number>>(
+  (acc, section) => {
+    acc[section.sectionNumber] = (acc[section.sectionNumber] ?? 0) + 1;
+    return acc;
+  },
+  {},
+);
+
+const findSectionByParams = (
+  sectionNumber: string | null,
+  sectionEntryRaw: string | null,
+) => {
+  if (!sectionNumber) {
+    return sortedSectionsData[0];
+  }
+
+  const sectionEntry = Number(sectionEntryRaw);
+  if (!Number.isNaN(sectionEntry) && sectionEntry > 0) {
+    const matchByEntry = sortedSectionsData.find(
+      (section) =>
+        section.sectionNumber === sectionNumber &&
+        section.sectionEntry === sectionEntry,
+    );
+    if (matchByEntry) {
+      return matchByEntry;
+    }
+  }
+
+  return (
+    sortedSectionsData.find(
+      (section) => section.sectionNumber === sectionNumber,
+    ) ?? sortedSectionsData[0]
+  );
+};
+
+const getSectionSearchParams = (section: SectionDataEntry) => {
+  if ((sectionNumberCounts[section.sectionNumber] ?? 0) > 1) {
+    return {
+      section: section.sectionNumber,
+      entry: String(section.sectionEntry),
+    };
+  }
+
+  return {
+    section: section.sectionNumber,
+  };
+};
+
 const Index = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const weekNumbers = weekData.map((week) => week.weekNumber);
-  const defaultWeek = weekNumbers[0] ?? 1;
-  const initialParam = Number(searchParams.get("week"));
-  const initialWeek = weekNumbers.includes(initialParam)
-    ? initialParam
-    : defaultWeek;
-  const [selectedWeek, setSelectedWeek] = useState<number>(initialWeek);
-  const selected = weekData.find((w) => w.weekNumber === selectedWeek);
+  const initialSelected = findSectionByParams(
+    searchParams.get("section"),
+    searchParams.get("entry"),
+  );
+  const [selectedSectionId, setSelectedSectionId] = useState<string>(
+    initialSelected?.id ?? "",
+  );
+  const selected =
+    sortedSectionsData.find((section) => section.id === selectedSectionId) ??
+    sortedSectionsData[0];
 
   useEffect(() => {
-    const paramValue = Number(searchParams.get("week"));
-    const nextWeek = weekNumbers.includes(paramValue)
-      ? paramValue
-      : defaultWeek;
-    if (nextWeek !== selectedWeek) {
-      setSelectedWeek(nextWeek);
+    const nextSelected = findSectionByParams(
+      searchParams.get("section"),
+      searchParams.get("entry"),
+    );
+
+    if (nextSelected && nextSelected.id !== selectedSectionId) {
+      setSelectedSectionId(nextSelected.id);
     }
-  }, [defaultWeek, searchParams, selectedWeek, weekNumbers]);
+  }, [searchParams, selectedSectionId]);
+
+  useEffect(() => {
+    if (!selected) {
+      return;
+    }
+
+    const expectedParams = getSectionSearchParams(selected);
+    const hasSection = searchParams.get("section") === expectedParams.section;
+    const hasEntry =
+      (expectedParams.entry &&
+        searchParams.get("entry") === expectedParams.entry) ||
+      (!expectedParams.entry && !searchParams.get("entry"));
+
+    if (!hasSection || !hasEntry) {
+      setSearchParams(expectedParams);
+    }
+  }, [searchParams, selected, setSearchParams]);
 
   return (
     <main className="min-h-screen bg-background">
@@ -508,21 +682,30 @@ const Index = () => {
       <Introduction />
 
       <div className="gallery-container mt-8 mb-6">
-        <div role="tablist" className="inline-flex rounded-md bg-muted p-1">
-          {weekNumbers.map((n) => {
-            const active = selectedWeek === n;
+        <div
+          role="tablist"
+          className="flex gap-2 rounded-xl bg-muted p-2 overflow-x-auto"
+        >
+          {sortedSectionsData.map((section) => {
+            const active = selectedSectionId === section.id;
             return (
               <button
-                key={n}
+                key={section.id}
                 role="tab"
                 aria-selected={active}
                 onClick={() => {
-                  setSelectedWeek(n);
-                  setSearchParams({ week: String(n) });
+                  setSelectedSectionId(section.id);
+                  setSearchParams(getSectionSearchParams(section));
                 }}
-                className={`px-4 py-2 rounded-md focus:outline-none ${active ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
+                className={`px-4 py-2 rounded-lg focus:outline-none whitespace-nowrap transition-colors ${
+                  active
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-accent"
+                }`}
               >
-                Week {n}
+                <span className="font-semibold">{section.sectionNumber}</span>
+                <span className="mx-2 text-gallery-stone">·</span>
+                <span>{section.title}</span>
               </button>
             );
           })}
@@ -531,20 +714,16 @@ const Index = () => {
 
       {selected && (
         <WeekSection
-          key={selected.weekNumber}
-          weekNumber={selected.weekNumber}
+          key={selected.id}
+          weekNumber={selected.sectionNumber}
+          sectionLabel="Section"
           title={selected.title}
           date={selected.date}
           reflection={selected.reflection ?? ""}
           tags={selected.tags}
           images={selected.images}
-          title2={selected.title2}
-          date2={selected.date2}
-          reflection2={selected.reflection2}
-          tags2={selected.tags2}
-          images2={selected.images2}
-          postTitle2={selected.postTitle2}
-          postReflection2={selected.postReflection2}
+          postTitle2={selected.postTitle}
+          postReflection2={selected.postReflection}
         />
       )}
 
