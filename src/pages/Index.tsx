@@ -21,6 +21,8 @@ import hex4 from "@/assets/hex4.jpeg";
 import hex5 from "@/assets/hex5.jpeg";
 import hex6 from "@/assets/hex6.jpeg";
 import materials from "@/assets/materials.jpeg";
+import scratch1 from "@/assets/scratch1.png";
+import scratch2 from "@/assets/scratch2.webp";
 import sketch1 from "@/assets/sketch 1.jpeg";
 import sketch2 from "@/assets/sketch 2.jpeg";
 import sketch3 from "@/assets/sketch 3.jpeg";
@@ -28,7 +30,12 @@ import sketch4 from "@/assets/sketch 4.jpeg";
 import sketch5 from "@/assets/sketch 5.jpeg";
 import sketch6 from "@/assets/sketch 6.jpeg";
 import sketchmissing from "@/assets/sketch missing.jpeg";
+import nintendo1 from "@/assets/nintendo1.jpg";
+import nintendo2 from "@/assets/nintendo 2.webp";
+import keva1 from "@/assets/KEVA 1.webp";
+import keva2 from "@/assets/keva 2.avif";
 import table2 from "@/assets/table 2.png";
+import table3 from "@/assets/table3.png";
 import table from "@/assets/table.png";
 import tinkeringSpaceLec1 from "@/assets/tinkering_spaces.jpeg";
 import tinkering1 from "@/assets/tinkering1.jpeg";
@@ -72,6 +79,28 @@ interface WeekDataEntry {
   }[];
   postTitle2?: string;
   postReflection2?: string;
+  subsections?: {
+    title: string;
+    reflection: string;
+    images: {
+      src: string;
+      alt: string;
+      caption?: string;
+      aspectRatio?: "landscape" | "portrait" | "square" | "auto";
+      span?: "normal" | "wide";
+    }[];
+  }[];
+  subsections2?: {
+    title: string;
+    reflection: string;
+    images: {
+      src: string;
+      alt: string;
+      caption?: string;
+      aspectRatio?: "landscape" | "portrait" | "square" | "auto";
+      span?: "normal" | "wide";
+    }[];
+  }[];
 }
 
 const weekData: WeekDataEntry[] = [
@@ -479,6 +508,93 @@ This metaphor focuses on the programming concepts of request/response communicat
       },
     ],
   },
+  {
+    weekNumber: 5,
+    title: "2.4 Design your building block - evaluate",
+    reflection:
+      "To evaluate the effectiveness of my building block design, I applied the same material affordance criteria used in the tinkering material comparison table. This evaluation helps determine how well the prototype supports experimentation, accessibility, and creative exploration within a tinkering process.\n\nAccording to the course reader, tinkering is characterized by hands-on exploration, experimentation, and iteration, where understanding emerges through interaction with materials. My prototype reflects this idea by allowing users to physically experiment with connections between components. The magnets allow quick attachment to surfaces or other blocks, while the cylindrical holes and hooks provide multiple connection points for wires, rods, or other elements. These features encourage users to try different configurations and observe how the system behaves.\n\nThe design also relates to the reader’s concept of the toolbox, where materials and components function as building blocks for experimentation. Rather than representing a finished product, the hexagonal tile and connector block act as modular elements that can be combined in different ways. This supports open-ended exploration and iterative design, allowing users to gradually expand their constructions and experiment with new ideas.\n\nFinally, the prototype demonstrates the principle of “making do”, which is described in the reader as using available materials creatively during experimentation. The clay prototype was created using simple materials such as magnets, paper clips, and jewelry hooks. Although the prototype is not yet optimized for durability, it allowed rapid testing of the core concept. Through this process, I could explore how the block connects to other elements and identify potential improvements for a future 3D printed version.",
+    tags: ["Evaluate"],
+    images: [
+      {
+        src: table3,
+        alt: "Building block evaluation table",
+        caption: "Building block affordance evaluation",
+        aspectRatio: "auto" as const,
+      },
+    ],
+    title2: "3.3 Properties of Tinkering Materials - wide walls",
+    reflection2:
+      '"Wide walls" describes tinkering materials that allow many different types of projects and creative directions. Instead of guiding users toward a single predefined outcome, these tools support a wide range of creative exploration. The following examples demonstrate materials and systems that enable diverse forms of tinkering and experimentation.',
+    tags2: ["Materials", "Wide Walls"],
+    images2: [],
+    subsections2: [
+      {
+        title: "Scratch",
+        reflection:
+          "Scratch is a visual programming environment designed to allow users to create many different types of digital projects using the same basic programming blocks. Instead of focusing on one specific application, Scratch enables users to build games, animations, interactive stories, simulations, or music projects. This demonstrates the concept of wide walls, because the system supports many creative directions while using a shared set of tools.\n\nIn the context of tinkering described in the course reader, Scratch supports experimentation, iteration, and discovery. Users can quickly modify code blocks, observe the results, and improve their projects through repeated experimentation. The visual block system lowers the barrier to entry while still allowing complex projects, which makes it well suited for exploratory learning and creative problem solving.",
+        images: [
+          {
+            src: scratch1,
+            alt: "Scratch projects and interface",
+            caption: "Scratch",
+            aspectRatio: "landscape" as const,
+          },
+          {
+            src: scratch2,
+            alt: "Scratch projects and interface 2",
+            caption: "Scratch 2",
+            aspectRatio: "landscape" as const,
+          },
+        ],
+      },
+      {
+        title: "Nintendo Labo",
+        reflection:
+          "Nintendo Labo combines cardboard construction with digital interaction through the Nintendo Switch. Users build physical devices called Toy-Con, such as musical instruments, vehicles, fishing rods, or robot controllers, which interact with the console’s sensors and software. Because the same cardboard construction kit can be used to create many different devices, Nintendo Labo demonstrates the principle of wide walls.\n\nThe system encourages a tinkering mindset similar to the process described in the reader: users experiment with materials, observe how mechanisms work, and modify designs to improve them. By combining simple materials like cardboard with digital feedback from the console, the system supports hands-on exploration and iterative experimentation. This allows users to discover new possibilities and develop creative solutions through making and testing.",
+        images: [
+          {
+            src: nintendo1,
+            alt: "Nintendo Labo example 1",
+            caption: "Nintendo Labo 1",
+            aspectRatio: "landscape" as const,
+          },
+          {
+            src: nintendo2,
+            alt: "Nintendo Labo example 2",
+            caption: "Nintendo Labo 2",
+            aspectRatio: "landscape" as const,
+          },
+        ],
+      },
+      {
+        title: "KEVA Planks",
+        reflection:
+          "KEVA Planks are simple wooden blocks that all have the same size and shape, but can be used to build a wide variety of structures. Because the planks do not use connectors or predefined instructions, users must experiment with balance, structure, and geometry when building. This open-ended approach makes KEVA Planks a strong example of wide walls, as the same basic material can be used to create towers, bridges, architectural models, or abstract sculptures.\n\nThis type of system reflects the idea of material exploration described in the course reader. Through hands-on experimentation, users gain knowledge about the properties of the material and how different structures behave. The process often involves trial, observation, and refinement, which aligns with the iterative tinkering process where new discoveries emerge through interaction with the material.",
+        images: [
+          {
+            src: keva1,
+            alt: "KEVA Planks example 1",
+            caption: "KEVA Planks 1",
+            aspectRatio: "landscape" as const,
+          },
+          {
+            src: keva2,
+            alt: "KEVA Planks example 2",
+            caption: "KEVA Planks 2",
+            aspectRatio: "landscape" as const,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    weekNumber: 6,
+    title: "5.1 Group Assignment: playground design",
+    reflection:
+      "Group assignment documentation for playground design will be added here. Include team process, concept decisions, and final outcomes.",
+    tags: ["Group Assignment", "Playground Design"],
+    images: [],
+  },
 ];
 
 interface SectionDataEntry {
@@ -491,6 +607,7 @@ interface SectionDataEntry {
   reflection: string;
   tags?: string[];
   images: WeekDataEntry["images"];
+  subsections?: WeekDataEntry["subsections"];
   postTitle?: string;
   postReflection?: string;
 }
@@ -537,6 +654,7 @@ const sectionsData: SectionDataEntry[] = weekData.flatMap((week, weekIndex) => {
       reflection: week.reflection,
       tags: week.tags,
       images: week.images,
+      subsections: week.subsections,
     },
   ];
 
@@ -552,6 +670,7 @@ const sectionsData: SectionDataEntry[] = weekData.flatMap((week, weekIndex) => {
       reflection: week.reflection2,
       tags: week.tags2,
       images: week.images2,
+      subsections: week.subsections2,
       postTitle: week.postTitle2,
       postReflection: week.postReflection2,
     });
@@ -722,6 +841,7 @@ const Index = () => {
           reflection={selected.reflection ?? ""}
           tags={selected.tags}
           images={selected.images}
+          subsections={selected.subsections}
           postTitle2={selected.postTitle}
           postReflection2={selected.postReflection}
         />

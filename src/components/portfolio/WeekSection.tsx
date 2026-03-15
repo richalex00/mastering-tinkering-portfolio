@@ -9,6 +9,11 @@ interface WeekSectionProps {
   reflection: string;
   images: GalleryImage[];
   tags?: string[];
+  subsections?: {
+    title: string;
+    reflection: string;
+    images: GalleryImage[];
+  }[];
   title2?: string;
   date2?: string;
   reflection2?: string;
@@ -26,6 +31,7 @@ const WeekSection = ({
   reflection,
   images,
   tags,
+  subsections,
   title2,
   date2,
   reflection2,
@@ -84,6 +90,26 @@ const WeekSection = ({
 
       {/* Image Gallery */}
       <ImageGallery images={images} />
+
+      {subsections && subsections.length > 0 && (
+        <div className="mt-16 md:mt-20 space-y-16">
+          {subsections.map((subsection, index) => (
+            <motion.div
+              key={`${subsection.title}-${index}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h3 className="gallery-heading-md mb-4">{subsection.title}</h3>
+              <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line mb-8">
+                {subsection.reflection}
+              </p>
+              <ImageGallery images={subsection.images} />
+            </motion.div>
+          ))}
+        </div>
+      )}
 
       {/* Second Assignment (Optional) */}
       {title2 && (
