@@ -21,6 +21,12 @@ import hex4 from "@/assets/hex4.jpeg";
 import hex5 from "@/assets/hex5.jpeg";
 import hex6 from "@/assets/hex6.jpeg";
 import materials from "@/assets/materials.jpeg";
+import masteringTinkering from "@/assets/Mastering Tinkering.png";
+import masteringTinkering1 from "@/assets/Mastering Tinkering (1).png";
+import masteringTinkering2 from "@/assets/Mastering Tinkering (2).png";
+import masteringTinkering3 from "@/assets/Mastering Tinkering (3).png";
+import masteringTinkering4 from "@/assets/Mastering Tinkering (4).png";
+import masteringTinkering5 from "@/assets/Mastering Tinkering (5).png";
 import scratch1 from "@/assets/scratch1.png";
 import scratch2 from "@/assets/scratch2.webp";
 import sketch1 from "@/assets/sketch 1.jpeg";
@@ -239,6 +245,7 @@ In future iterations, I plan to refine the geometry and durability of the design
         alt: "Table of materials and their properties",
         caption: "Table of materials and their properties",
         aspectRatio: "auto" as const,
+        span: "wide" as const,
       },
       {
         src: tinkering1,
@@ -457,6 +464,7 @@ Transparency - The degree to which the inner workings of a system are visible an
         alt: "Extended materials properties notes",
         caption: "Extended material properties overview",
         aspectRatio: "auto" as const,
+        span: "wide" as const,
       },
       {
         src: tinkering3,
@@ -520,6 +528,7 @@ This metaphor focuses on the programming concepts of request/response communicat
         alt: "Building block evaluation table",
         caption: "Building block affordance evaluation",
         aspectRatio: "auto" as const,
+        span: "wide" as const,
       },
     ],
     title2: "3.3 Properties of Tinkering Materials - wide walls",
@@ -591,9 +600,52 @@ This metaphor focuses on the programming concepts of request/response communicat
     weekNumber: 6,
     title: "5.1 Group Assignment: playground design",
     reflection:
-      "Group assignment documentation for playground design will be added here. Include team process, concept decisions, and final outcomes.",
+      "This project explores the transformation of electromyography (EMG) signals into musical expression. By capturing electrical activity produced by muscle movements, the system interprets these biological signals and maps them to musical parameters such as pitch, rhythm, and dynamics. The result is an interactive interface where the human body becomes an instrument, translating subtle muscle activity into sound. This work sits at the intersection of biomedical sensing, signal processing, and creative technology, demonstrating how physiological data can be used to create new forms of musical interaction.",
     tags: ["Group Assignment", "Playground Design"],
-    images: [],
+    images: [
+      {
+        src: masteringTinkering,
+        alt: "Mastering Tinkering playground design image 1",
+        caption: "Cover page",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+      {
+        src: masteringTinkering1,
+        alt: "Mastering Tinkering playground design image 2",
+        caption: "Our idea",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+      {
+        src: masteringTinkering2,
+        alt: "Mastering Tinkering playground design image 3",
+        caption: "Materials",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+      {
+        src: masteringTinkering3,
+        alt: "Mastering Tinkering playground design image 4",
+        caption: "Scaffolding",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+      {
+        src: masteringTinkering4,
+        alt: "Mastering Tinkering playground design image 5",
+        caption: "Process",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+      {
+        src: masteringTinkering5,
+        alt: "Mastering Tinkering playground design image 6",
+        caption: "Expolration Space",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+    ],
   },
 ];
 
