@@ -1,9 +1,64 @@
 import { motion } from "framer-motion";
 import ImageGallery, { GalleryImage } from "./ImageGallery";
 
+const renderHighlightedText = (text: string) => {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((segment, index) => {
+    const match = segment.match(/^\*\*([^*]+)\*\*$/);
+
+    if (!match) {
+      return segment;
+    }
+
+    return (
+      <span key={`${match[1]}-${index}`} className="font-medium text-primary">
+        {match[1]}
+      </span>
+    );
+  });
+};
+
+const renderReflectionContent = (text: string, className: string) => {
+  if (!text.includes("**")) {
+    return <p className={className}>{text}</p>;
+  }
+
+  const paragraphs = text.split(/\n{2,}/).filter(Boolean);
+
+  return (
+    <div className="max-w-2xl space-y-6">
+      {paragraphs.map((paragraph, index) => {
+        const lines = paragraph.split("\n");
+        const headingMatch = lines[0]?.trim().match(/^\*\*(.+)\*\*$/);
+
+        if (headingMatch) {
+          const body = lines.slice(1).join("\n");
+
+          return (
+            <div key={index} className="space-y-2">
+              <p className="gallery-body leading-relaxed font-medium text-primary">
+                {headingMatch[1]}
+              </p>
+              {body ? (
+                <p className={className}>{renderHighlightedText(body)}</p>
+              ) : null}
+            </div>
+          );
+        }
+
+        return (
+          <p key={index} className={className}>
+            {renderHighlightedText(paragraph)}
+          </p>
+        );
+      })}
+    </div>
+  );
+};
+
 interface WeekSectionProps {
   weekNumber: number | string;
   sectionLabel?: string;
+  containerClassName?: string;
   title: string;
   date?: string;
   reflection: string;
@@ -26,6 +81,7 @@ interface WeekSectionProps {
 const WeekSection = ({
   weekNumber,
   sectionLabel = "Week",
+  containerClassName,
   title,
   date,
   reflection,
@@ -40,8 +96,13 @@ const WeekSection = ({
   postTitle2,
   postReflection2,
 }: WeekSectionProps) => {
+  const hasImages = images.length > 0;
+  const hasSecondaryImages = Boolean(images2 && images2.length > 0);
+
   return (
-    <section className="gallery-container py-16 md:py-24">
+    <section
+      className={`${containerClassName ?? "gallery-container"} pt-8 pb-16 md:pt-12 md:pb-24`}
+    >
       {/* Week Header - Only shows week number once */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -83,16 +144,19 @@ const WeekSection = ({
             ))}
           </div>
         )}
-        <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line">
-          {reflection}
-        </p>
+        {renderReflectionContent(
+          reflection,
+          "gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line",
+        )}
       </motion.div>
 
       {/* Image Gallery */}
-      <ImageGallery images={images} />
+      {hasImages && <ImageGallery images={images} />}
 
       {subsections && subsections.length > 0 && (
-        <div className="mt-16 md:mt-20 space-y-16">
+        <div
+          className={`${hasImages ? "mt-16 md:mt-20" : "mt-8 md:mt-10"} space-y-16`}
+        >
           {subsections.map((subsection, index) => (
             <motion.div
               key={`${subsection.title}-${index}`}
@@ -102,9 +166,12 @@ const WeekSection = ({
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <h3 className="gallery-heading-md mb-4">{subsection.title}</h3>
-              <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line mb-8">
-                {subsection.reflection}
-              </p>
+              <div className="mb-8">
+                {renderReflectionContent(
+                  subsection.reflection,
+                  "gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line",
+                )}
+              </div>
               <ImageGallery images={subsection.images} />
             </motion.div>
           ))}
@@ -143,13 +210,14 @@ const WeekSection = ({
               </div>
             )}
 
-            <p className="gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line">
-              {reflection2}
-            </p>
+            {renderReflectionContent(
+              reflection2,
+              "gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line",
+            )}
           </motion.div>
 
           {/* Second Image Gallery */}
-          {images2 && <ImageGallery images={images2} />}
+          {hasSecondaryImages && <ImageGallery images={images2!} />}
         </>
       )}
 
@@ -164,9 +232,10 @@ const WeekSection = ({
           {postTitle2 && (
             <h3 className="gallery-heading-md mb-4">{postTitle2}</h3>
           )}
-          <p className="gallery-body text-muted-foreground leading-relaxed whitespace-pre-line">
-            {postReflection2}
-          </p>
+          {renderReflectionContent(
+            postReflection2,
+            "gallery-body text-muted-foreground leading-relaxed whitespace-pre-line",
+          )}
         </motion.div>
       )}
 

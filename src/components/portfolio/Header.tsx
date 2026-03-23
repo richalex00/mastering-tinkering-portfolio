@@ -5,7 +5,7 @@ const Header = () => {
   // import profileImage from "@/assets/your-profile-image.jpg";
 
   return (
-    <header className="gallery-container pt-16 pb-20 md:pt-24 md:pb-32">
+    <header className="gallery-container pt-16 pb-14 md:pt-24 md:pb-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

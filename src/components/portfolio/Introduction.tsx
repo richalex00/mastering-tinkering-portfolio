@@ -3,7 +3,7 @@ import meInCorkNature from "@/assets/me_in_cork_nature.jpeg";
 
 const Introduction = () => {
   return (
-    <section className="gallery-container pb-16 md:pb-24">
+    <section className="gallery-container pb-10 md:pb-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const Introduction = () => {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: 0.3 }}
-        className="gallery-divider mt-16 md:mt-24 origin-left"
+        className="gallery-divider mt-10 md:mt-14 origin-left"
       />
     </section>
   );

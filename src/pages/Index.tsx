@@ -14,6 +14,7 @@ import connectionBlock5 from "@/assets/connection block 5.jpeg";
 import connectionBlock6 from "@/assets/connection block 6.jpeg";
 import connectionBlockSketch1 from "@/assets/connection block sketch 1.jpeg";
 import connectionBlockSketch2 from "@/assets/connection block sketch 2.jpeg";
+import designMethodsBrainstorm from "@/assets/design methods brainstorm.jpeg";
 import hex1 from "@/assets/hex1.jpeg";
 import hex2 from "@/assets/hex2.jpeg";
 import hex3 from "@/assets/hex3.jpeg";
@@ -382,7 +383,7 @@ The design emphasizes adaptability over precision. Instead of defining a single 
 Context: Group tinkering session involving mechanical construction and basic electronics
 
 
-P — Participants
+**P — Participants**
 
 The session involved a small group of learners working collaboratively. Participants had mixed levels of prior experience with electronics, crafting, and mechanical design. Roles emerged organically, including designing the cardboard structure, assembling electronic components, and testing motor movement. Collaboration and peer learning were central features of the activity.
 
@@ -390,7 +391,7 @@ Validity note: Multiple participants contributed observations, reducing single-o
 Transferability note: The activity is suitable for learners with varied technical backgrounds.
 
 
-O — Objects
+**O — Objects**
 
 The main artifact produced was a cardboard Vitruvian Man model with movable arms and legs. Materials included:
 
@@ -404,14 +405,14 @@ The main artifact produced was a cardboard Vitruvian Man model with movable arms
 Reproducibility note: All materials are low-cost and widely available, making the setup easy to replicate.
 
 
-E — Environment
+**E — Environment**
 
   - The tinkering session took place in an indoor workspace with tables, shared tools, and enough room for group interaction. The environment allowed participants to freely move, test components, and iterate on their design without strict time pressure.
 
   Transferability note: The activity can be reproduced in classrooms, makerspaces, or informal learning environments.
 
 
-M — Messages
+**M — Messages**
 
 Several key messages emerged through the activity:
 
@@ -423,7 +424,7 @@ Several key messages emerged through the activity:
   Validity note: Observed behaviors aligned with participants’ verbal reflections during the session.
 
 
-S — Services (or Systems / Skills)
+**S — Services (or Systems / Skills)**
 
 The session supported the development of multiple skills:
 
@@ -435,15 +436,15 @@ The session supported the development of multiple skills:
   - Reproducibility note: Following the same steps and division of tasks would likely lead to similar learning outcomes in another group.
 
   
-Reflection on Quality Criteria
+**Reflection on Quality Criteria**
 
-Transferability:
+**Transferability:**
 The activity can be adapted to different age groups, learning contexts, and levels of technical complexity by changing materials or motor types.
 
-Validity:
+**Validity:**
 Observations were based on direct participation, group discussion, and visible outcomes (working motorized limbs), ensuring alignment between observed actions and conclusions.
 
-Reproducibility:
+**Reproducibility:**
 Because the materials, environment, and process are clearly described, another group could replicate the session and reasonably expect comparable results.`,
   },
   {
@@ -642,6 +643,91 @@ This metaphor focuses on the programming concepts of request/response communicat
         src: masteringTinkering5,
         alt: "Mastering Tinkering playground design image 6",
         caption: "Expolration Space",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+    ],
+  },
+  {
+    weekNumber: 7,
+    title: "1.2 Tinkering Spaces - reflect back",
+    date: "March 20th, 2026",
+    reflection: `Reflecting on my tinkering spaces using the framework from the course reader, I can identify several elements of the tinkering "playground" and how they are present or missing in different environments.
+
+In my personal workspace, the environment supports low-threshold experimentation. It is easily accessible and informal, which encourages quick idea generation and spontaneous tinkering. However, the available toolbox is limited, mainly consisting of basic materials and digital tools. This restricts the complexity of what I can build and reduces opportunities for deeper material exploration. The space supports iteration and reflection, but lacks diversity in materials and equipment.
+
+When reflecting upon the tinkering spaces I previously uploaded, I realised I should revisit the design lab to take some better photos of the tools available. In contrast, the shared workspace in the Design Lab provides a much richer toolbox, including access to machines, materials, and collaborative input. This environment better supports material exploration and prototyping, which are key aspects of tinkering. The presence of others also introduces an informal facilitator role, where feedback and discussion help guide the process and stimulate new ideas.
+
+Looking at both spaces, I notice that each supports different aspects of tinkering. My personal space enables quick and independent exploration, while the Design Lab supports more structured experimentation and complex making. However, both spaces could be improved: my personal workspace lacks tools and materials, while the shared space could benefit from being more accessible for spontaneous use.
+
+Overall, this comparison shows that an effective tinkering environment requires a balance between accessibility, a rich toolbox, and opportunities for experimentation and reflection.`,
+    tags: ["Reflection", "Environment"],
+    images: [
+      {
+        src: tinkeringSpaceLec1,
+        alt: "Tinkering examples in shared workspace",
+        caption: "Shared tinkering setup",
+        aspectRatio: "landscape" as const,
+      },
+      {
+        src: tinkeringSpace2,
+        alt: "Personal tinkering workspace",
+        caption: "Personal tinkering setup",
+        aspectRatio: "landscape" as const,
+      },
+    ],
+  },
+  {
+    weekNumber: 8,
+    title: "4.1 Overview on Design Methods",
+    date: "March 20th, 2026",
+    reflection: `**Brainstorming**
+  A creative technique used to generate a large number of ideas quickly without judgment. It focuses on divergent thinking and exploring many possible solutions.
+
+  **Co-design**
+  A collaborative design approach where users or stakeholders actively participate in the design process, contributing ideas, feedback, and decisions.
+
+  **Critical Design**
+  A design approach that challenges assumptions and provokes reflection by creating speculative or provocative artifacts rather than practical solutions.
+
+  **Research Through Design**
+  A method where knowledge is generated through the process of designing and making artifacts. The design process itself is used as a form of research.
+
+  **Rapid Prototyping**
+  The quick creation of physical or digital models to test ideas, allowing fast experimentation and iteration.
+
+  **Iterative Design**
+  A cyclical design process where ideas are repeatedly tested, evaluated, and improved over multiple versions.`,
+    tags: ["Design Methods", "Overview"],
+    images: [
+      {
+        src: designMethodsBrainstorm,
+        alt: "Design methods brainstorm",
+        caption: "Design methods brainstorm",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+    ],
+  },
+  {
+    weekNumber: 9,
+    title: "5.2 Group Assignment: physical MVP, first iteration",
+    date: "March 20th, 2026",
+    reflection:
+      "For our first physical MVP iteration, we translated the concept into a buildable prototype to test core interaction and feasibility. The focus was not visual polish, but validating the essential mechanics, identifying constraints, and gathering early feedback. This first pass clarified what worked, what failed, and what needed to change before the next iteration.",
+    tags: ["Group Assignment", "Physical MVP", "Iteration"],
+    images: [
+      {
+        src: masteringTinkering2,
+        alt: "Physical MVP materials and setup",
+        caption: "Physical MVP setup",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+      {
+        src: masteringTinkering3,
+        alt: "First iteration scaffold and construction",
+        caption: "First iteration build",
         aspectRatio: "auto" as const,
         span: "wide" as const,
       },
@@ -852,52 +938,101 @@ const Index = () => {
       <Header />
       <Introduction />
 
-      <div className="gallery-container mt-8 mb-6">
-        <div
-          role="tablist"
-          className="flex gap-2 rounded-xl bg-muted p-2 overflow-x-auto"
-        >
-          {sortedSectionsData.map((section) => {
-            const active = selectedSectionId === section.id;
-            return (
-              <button
-                key={section.id}
-                role="tab"
-                aria-selected={active}
-                onClick={() => {
-                  setSelectedSectionId(section.id);
-                  setSearchParams(getSectionSearchParams(section));
-                }}
-                className={`px-4 py-2 rounded-lg focus:outline-none whitespace-nowrap transition-colors ${
-                  active
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:bg-accent"
-                }`}
+      <div className="gallery-container mt-1 mb-6 lg:mb-12">
+        <div className="lg:hidden">
+          <div
+            role="tablist"
+            className="flex gap-2 rounded-xl border border-border/70 bg-muted/70 p-2 overflow-x-auto"
+          >
+            {sortedSectionsData.map((section) => {
+              const active = selectedSectionId === section.id;
+              return (
+                <button
+                  key={section.id}
+                  role="tab"
+                  aria-selected={active}
+                  onClick={() => {
+                    setSelectedSectionId(section.id);
+                    setSearchParams(getSectionSearchParams(section));
+                  }}
+                  className={`w-full shrink-0 rounded-lg px-4 py-3 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
+                    active
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                  }`}
+                >
+                  <div className="flex items-start gap-2">
+                    <span className="min-w-[2.4rem] text-sm font-semibold">
+                      {section.sectionNumber}
+                    </span>
+                    <span className="text-sm leading-snug">
+                      {section.title}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="relative">
+          <aside className="hidden lg:block lg:absolute lg:right-full lg:mr-24 lg:w-72">
+            <div className="lg:sticky lg:top-20 lg:mt-16">
+              <div
+                role="tablist"
+                aria-orientation="vertical"
+                className="flex flex-col gap-1 rounded-2xl border border-border/70 bg-muted/70 p-3 max-h-[72vh] overflow-y-auto"
               >
-                <span className="font-semibold">{section.sectionNumber}</span>
-                <span className="mx-2 text-gallery-stone">·</span>
-                <span>{section.title}</span>
-              </button>
-            );
-          })}
+                {sortedSectionsData.map((section) => {
+                  const active = selectedSectionId === section.id;
+                  return (
+                    <button
+                      key={section.id}
+                      role="tab"
+                      aria-selected={active}
+                      onClick={() => {
+                        setSelectedSectionId(section.id);
+                        setSearchParams(getSectionSearchParams(section));
+                      }}
+                      className={`w-full shrink-0 rounded-lg px-4 py-3 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${
+                        active
+                          ? "bg-primary text-primary-foreground shadow-sm"
+                          : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                      }`}
+                    >
+                      <div className="flex items-start gap-2">
+                        <span className="min-w-[2.4rem] text-sm font-semibold">
+                          {section.sectionNumber}
+                        </span>
+                        <span className="text-sm leading-snug">
+                          {section.title}
+                        </span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </aside>
+
+          {selected && (
+            <WeekSection
+              key={selected.id}
+              containerClassName=""
+              weekNumber={selected.sectionNumber}
+              sectionLabel="Section"
+              title={selected.title}
+              date={selected.date}
+              reflection={selected.reflection ?? ""}
+              tags={selected.tags}
+              images={selected.images}
+              subsections={selected.subsections}
+              postTitle2={selected.postTitle}
+              postReflection2={selected.postReflection}
+            />
+          )}
         </div>
       </div>
-
-      {selected && (
-        <WeekSection
-          key={selected.id}
-          weekNumber={selected.sectionNumber}
-          sectionLabel="Section"
-          title={selected.title}
-          date={selected.date}
-          reflection={selected.reflection ?? ""}
-          tags={selected.tags}
-          images={selected.images}
-          subsections={selected.subsections}
-          postTitle2={selected.postTitle}
-          postReflection2={selected.postReflection}
-        />
-      )}
 
       <Footer />
     </main>
