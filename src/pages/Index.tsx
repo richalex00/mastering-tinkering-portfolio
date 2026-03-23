@@ -15,6 +15,7 @@ import connectionBlock6 from "@/assets/connection block 6.jpeg";
 import connectionBlockSketch1 from "@/assets/connection block sketch 1.jpeg";
 import connectionBlockSketch2 from "@/assets/connection block sketch 2.jpeg";
 import designMethodsBrainstorm from "@/assets/design methods brainstorm.jpeg";
+import groupProjectBioSensor from "@/assets/group project bio sensor.png";
 import hex1 from "@/assets/hex1.jpeg";
 import hex2 from "@/assets/hex2.jpeg";
 import hex3 from "@/assets/hex3.jpeg";
@@ -713,21 +714,53 @@ Overall, this comparison shows that an effective tinkering environment requires 
     weekNumber: 9,
     title: "5.2 Group Assignment: physical MVP, first iteration",
     date: "March 20th, 2026",
-    reflection:
-      "For our first physical MVP iteration, we translated the concept into a buildable prototype to test core interaction and feasibility. The focus was not visual polish, but validating the essential mechanics, identifying constraints, and gathering early feedback. This first pass clarified what worked, what failed, and what needed to change before the next iteration.",
+    reflection: `**Bio sensors**
+The main idea of our playground design is one where the users place electronic components on their limbs to measure movement. This movement is converted into musical signals, with each limb tied to an instrument played through a buzzer, and pitch determined by the intensity of movement.
+
+To design the Minimal Viable Product (MVP) that will be showcased during class, we used the brainstorming design method to generate ideas for the demonstration.
+
+The main challenge we encountered during brainstorming was that obtaining EMG materials in a short timespan and with a small budget was not possible. Because of this, we decided to use strain gauges to acquire limb movement. These are easier to obtain and, when placed on articulations, can measure movement in the arms and legs.
+
+**Scaffolding Materials**
+The main scaffolding components will be a manual that explains sensor details, followed by starting exercises to help users get familiar with coding and sensor use in the demonstration. This requires creating a clear design and developing it into a practical manual, using references as guidance.
+
+To support users, scaffolding is divided into two parts: a Visual Manual and Starting Exercises.
+
+**The Manual**
+The manual uses modular instructions to keep guidance simple and avoid overwhelming participants. It includes:
+- Component map: A visual guide showing how to connect the sensors to the controller.
+- Signals manual: A guide explaining how skin contact and sensor placement affect sound quality.
+- Reference guide: Icons showing which movements create specific sounds.
+
+**Starting Exercises**
+These exercises provide a low threshold for beginners to get comfortable with the technology:
+- First exercise: Users try to make a sound by flexing a muscle. This helps them understand sensor sensitivity.
+- Second exercise: Users practice changing volume by moving from soft to hard flexes. This helps them understand how movement intensity changes the output.
+- Third exercise: Users try to make different sounds using different muscles from different parts of the body (for example, arm and leg). This helps them learn the different sounds of each muscle.
+
+These are the basic exercises. After participants complete them, additional exercises with elevated difficulty will be introduced.
+
+**Scaffolding Strategies**
+The manual also provides prompting questions to help participants who get stuck. Examples include:
+- How does the sound change if you move the sensor slightly to the left?
+- Could you use your legs for the beat while your arms control the melody?
+
+This way, people who face problems can first try to solve them independently before asking for help.
+
+**Materials**
+It was decided that electrical components would replace musical instruments, since physical instruments would require many fabrication steps.
+
+For electrical EMG signal replacement, strain gauges will be used because they are easier to wire and work in a similar way to the EMG signals that will be used later.
+
+As the brain of the system, and to ensure signals are routed correctly and the setup works as intended, we will use an Arduino UNO. This is a microcontroller all of us have prior experience with, and it is well suited to this project. A small breadboard may also be needed to route cables and adjust electrical currents.
+
+For instrument replacement, we will use a buzzer component that changes pitch based on the electrical signal. This will be controlled by the Arduino and the type of signal it forwards to the buzzer, based on signal strength and the specified code.`,
     tags: ["Group Assignment", "Physical MVP", "Iteration"],
     images: [
       {
-        src: masteringTinkering2,
-        alt: "Physical MVP materials and setup",
-        caption: "Physical MVP setup",
-        aspectRatio: "auto" as const,
-        span: "wide" as const,
-      },
-      {
-        src: masteringTinkering3,
-        alt: "First iteration scaffold and construction",
-        caption: "First iteration build",
+        src: groupProjectBioSensor,
+        alt: "Group project bio sensor concept",
+        caption: "Bio sensor concept",
         aspectRatio: "auto" as const,
         span: "wide" as const,
       },
