@@ -63,6 +63,8 @@ import tinkeringSpace2 from "@/assets/tinkering space 2.jpeg";
 import lego1 from "@/assets/lego 1.jpeg";
 import lego2 from "@/assets/lego 2.jpeg";
 import lego3 from "@/assets/lego 3.jpeg";
+import aiSketch from "@/assets/AI sketch.jpeg";
+import uiSketch from "@/assets/UI sketch.jpeg";
 
 interface WeekDataEntry {
   weekNumber: number;
@@ -773,13 +775,129 @@ For instrument replacement, we will use a buzzer component that changes pitch ba
     weekNumber: 10,
     title: "4.2 Tinkering as Design Method in your Field",
     date: "March 30th, 2026",
-    reflection: `In my field, tinkering functions as a design method by turning abstract ideas into testable interactions through quick making, observation, and iteration. Rather than treating design as a linear path from concept to final outcome, this approach supports cycles of exploration where prototypes are used to discover opportunities, constraints, and user responses.
-
-Tinkering helps bridge the gap between technical feasibility and experiential quality. By building simple versions early, it becomes easier to evaluate how materials, sensors, code, and interaction patterns shape user experience. This process supports reflective decision making: each prototype reveals what to refine, what to discard, and what to develop further.
-
-Using tinkering as a method also encourages collaboration. Ideas become concrete and discussable, which improves feedback quality in group settings. In this way, tinkering is not only a way to fabricate artifacts, but also a way to think, communicate, and generate knowledge through design action.`,
+    reflection: `**Tinkerable Problems in Interaction Technology**`,
     tags: ["Design Method", "Reflection", "Field Application"],
     images: [],
+    subsections: [
+      {
+        title: "1. Understanding AI Systems as Black Boxes",
+        reflection: `**Problem**
+AI systems are often experienced as opaque: users observe inputs and outputs without insight into internal processes. This limits both critical engagement and the development of intuition about system behavior.
+
+**Tinkerability**
+This problem is underspecified and does not have a single correct interpretation, making it suitable for a tinkering approach. Understanding emerges through interaction, iteration, and interpretation, rather than explanation alone.
+The setup aligns with boxed complexity, where advanced functionality is encapsulated but still open to exploration. This allows users to engage with behavior without needing to construct the system from first principles.
+
+**Tinkering Playground**
+The playground is structured around direct interaction with a functioning AI system as material.
+- Seed: A pretrained AI model that produces immediate, observable outputs
+- Toolbox: Input manipulation (e.g. noise, transformations), custom data inputs, and real-time output visualization
+- Environment: An interactive interface that supports rapid iteration and low-cost experimentation
+- Process: Iterative cycles of modifying inputs, observing outputs, and forming interpretations
+- Discovery: Development of intuition about system behavior, including failure cases and inconsistencies
+- Facilitator: Provides prompts (e.g. "confuse the model") and supports reflection without explaining underlying mechanisms
+
+**Target Group**
+Students in computer science or interaction design, particularly those encountering AI systems without prior deep technical knowledge.
+
+**Onboarding and Scaffolding**
+- Initial prompt: vary a single parameter and observe changes
+- Example inputs to lower the threshold
+- Facilitator prompts focused on identifying patterns and anomalies
+
+Scaffolding remains minimal and directional, supporting exploration without prescribing outcomes.
+
+**Example Assignments**
+- Produce an input that results in a misclassification
+- Identify patterns in incorrect predictions
+- Relate observed behavior to hypotheses about the model`,
+        images: [
+          {
+            src: aiSketch,
+            alt: "AI systems sketch",
+            caption: "AI Systems as Black Boxes",
+            aspectRatio: "auto" as const,
+            span: "wide" as const,
+          },
+        ],
+      },
+      {
+        title: "2. Designing Intuitive User Interfaces",
+        reflection: `**Problem**
+Interface design involves complex, context-dependent interactions between user expectations, system behavior, and form. These relationships cannot be fully specified in advance.
+
+**Tinkerability**
+The problem benefits from material exploration and iterative reframing. There is no single optimal solution; instead, understanding emerges through prototyping and interaction.
+This aligns with making do, where constrained materials shape the exploration space and guide design decisions.
+
+**Tinkering Playground**
+The playground is material-driven, where interaction emerges through prototyping under constraints.
+- Seed: An open design challenge (e.g. "design a music player")
+- Toolbox: Paper, cardboard, markers, basic electronics, and imposed constraints (e.g. no screens, limited inputs)
+- Environment: A workspace that supports rapid construction, testing, and iteration
+- Process: Cycles of building, testing, and modifying prototypes in response to observed interaction
+- Discovery: Insights into how material choices and constraints shape interaction and usability
+- Facilitator: Encourages iteration, reframes problems, and prevents early fixation on a single solution
+
+**Target Group**
+Interaction design students and HCI learners working with early-stage concepts.
+
+**Onboarding and Scaffolding**
+- Introduction through simple example prototypes
+- Templates for common interface elements
+- Constraints used as structuring devices rather than limitations
+
+Facilitation focuses on maintaining iteration and avoiding premature convergence.
+
+**Example Assignments**
+- Design a music player without visual output
+- Create an interface operable without sight
+- Prototype and iteratively refine an intentionally unclear interface`,
+        images: [
+          {
+            src: uiSketch,
+            alt: "User interface design sketch",
+            caption: "Designing Intuitive User Interfaces",
+            aspectRatio: "auto" as const,
+            span: "wide" as const,
+          },
+        ],
+      },
+      {
+        title: "3. Debugging as Exploration of System Behavior",
+        reflection: `**Problem**
+Debugging is commonly approached as a goal-oriented task aimed at fixing errors. This often leads to convergence on a solution without understanding underlying system behavior.
+
+**Tinkerability**
+Reframing debugging as tinkering shifts the focus from solution to understanding through experimentation. Instead of minimizing errors, the process uses them as entry points for exploration.
+This distinguishes tinkering from trial-and-error: the objective is not only to reach a working state, but to generate insight.
+
+**Tinkering Playground**
+The playground is structured around failure as material for exploration.
+- Seed: A pre-constructed system containing faults (software or hardware)
+- Toolbox: Buggy code or circuits, debugging tools (logs, probes, visualizations), and modifiable components
+- Environment: A safe experimental setup where systems can be altered and failure carries no penalty
+- Process: Observation, hypothesis formation, intervention, and reflection on system responses
+- Discovery: Understanding how system behavior emerges and how faults propagate
+- Facilitator: Guides attention toward explanation and reflection rather than immediate solution convergence
+
+**Target Group**
+Programming students and learners in embedded or interactive systems.
+
+**Onboarding and Scaffolding**
+- Initial focus on observation before intervention
+- Prompts encouraging explanation ("what is happening?")
+- Facilitator support in structuring reflection
+
+Scaffolding supports reasoning without directing toward immediate solutions.
+
+**Example Assignments**
+- Describe a bug without resolving it
+- Introduce new faults and observe system changes
+- Compare different investigative strategies`,
+        images: [],
+      },
+    ],
   },
   {
     weekNumber: 11,
