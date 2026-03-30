@@ -2,19 +2,38 @@ import { motion } from "framer-motion";
 import ImageGallery, { GalleryImage } from "./ImageGallery";
 
 const renderHighlightedText = (text: string) => {
-  return text.split(/(\*\*[^*]+\*\*)/g).map((segment, index) => {
-    const match = segment.match(/^\*\*([^*]+)\*\*$/);
+  return text
+    .split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^\)]+\))/g)
+    .map((segment, index) => {
+      const boldMatch = segment.match(/^\*\*([^*]+)\*\*$/);
+      if (boldMatch) {
+        return (
+          <span
+            key={`${boldMatch[1]}-${index}`}
+            className="font-medium text-primary"
+          >
+            {boldMatch[1]}
+          </span>
+        );
+      }
 
-    if (!match) {
+      const linkMatch = segment.match(/^\[([^\]]+)\]\(([^\)]+)\)$/);
+      if (linkMatch) {
+        return (
+          <a
+            key={`${linkMatch[1]}-${index}`}
+            href={linkMatch[2]}
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary underline underline-offset-4 hover:opacity-80"
+          >
+            {linkMatch[1]}
+          </a>
+        );
+      }
+
       return segment;
-    }
-
-    return (
-      <span key={`${match[1]}-${index}`} className="font-medium text-primary">
-        {match[1]}
-      </span>
-    );
-  });
+    });
 };
 
 const renderReflectionContent = (text: string, className: string) => {

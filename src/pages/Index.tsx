@@ -16,6 +16,9 @@ import connectionBlockSketch1 from "@/assets/connection block sketch 1.jpeg";
 import connectionBlockSketch2 from "@/assets/connection block sketch 2.jpeg";
 import designMethodsBrainstorm from "@/assets/design methods brainstorm.jpeg";
 import groupProjectBioSensor from "@/assets/group project bio sensor.png";
+import manualPage1 from "@/assets/manual page 1.png";
+import manualPage2 from "@/assets/manual page 2.png";
+import poster from "@/assets/poster.png";
 import hex1 from "@/assets/hex1.jpeg";
 import hex2 from "@/assets/hex2.jpeg";
 import hex3 from "@/assets/hex3.jpeg";
@@ -133,7 +136,7 @@ const weekData: WeekDataEntry[] = [
         aspectRatio: "landscape" as const,
       },
     ],
-    title2: "2.2 Design a building block",
+    title2: "2.1 Design a building block",
     date2: "January 9th, 2026",
     reflection2: `Here is a visual diary of my design process for the building block assignment. I started with broad brainstorming, exploring different shapes and connection methods. I found myself drawn to nature as inspiration, which was a feature in every aspect of the design. I ultimately landed on a final concept that blends organic function and aesthetics.`,
     tags2: ["Design", "Sketching"],
@@ -763,6 +766,59 @@ For instrument replacement, we will use a buzzer component that changes pitch ba
         caption: "Bio sensor concept",
         aspectRatio: "auto" as const,
         span: "wide" as const,
+      },
+    ],
+  },
+  {
+    weekNumber: 10,
+    title: "4.2 Tinkering as Design Method in your Field",
+    date: "March 30th, 2026",
+    reflection: `In my field, tinkering functions as a design method by turning abstract ideas into testable interactions through quick making, observation, and iteration. Rather than treating design as a linear path from concept to final outcome, this approach supports cycles of exploration where prototypes are used to discover opportunities, constraints, and user responses.
+
+Tinkering helps bridge the gap between technical feasibility and experiential quality. By building simple versions early, it becomes easier to evaluate how materials, sensors, code, and interaction patterns shape user experience. This process supports reflective decision making: each prototype reveals what to refine, what to discard, and what to develop further.
+
+Using tinkering as a method also encourages collaboration. Ideas become concrete and discussable, which improves feedback quality in group settings. In this way, tinkering is not only a way to fabricate artifacts, but also a way to think, communicate, and generate knowledge through design action.`,
+    tags: ["Design Method", "Reflection", "Field Application"],
+    images: [],
+  },
+  {
+    weekNumber: 11,
+    title: "5.3 Group Assignment - complete design, digital poster",
+    date: "March 30th, 2026",
+    reflection: `This section presents the complete design concept and the final digital poster for our group assignment. It consolidates the core idea, system components, interaction flow, and scaffolding approach into one clear communication artifact for presentation.
+
+The poster captures how body movement is translated into sound through sensor input and microcontroller processing, while also outlining the learning pathway for participants through guided exercises and support materials.`,
+    tags: ["Group Assignment", "Complete Design", "Digital Poster"],
+    images: [
+      {
+        src: poster,
+        alt: "Complete design digital poster",
+        caption: "Digital poster",
+        aspectRatio: "auto" as const,
+        span: "wide" as const,
+      },
+    ],
+    subsections: [
+      {
+        title: "Workshop Exercise Guide",
+        reflection:
+          "The two pages of the workshop exercise guide are shown below for direct reference during setup and facilitation.",
+        images: [
+          {
+            src: manualPage1,
+            alt: "Workshop exercise guide page 1",
+            caption: "Workshop exercise guide - page 1",
+            aspectRatio: "auto" as const,
+            span: "wide" as const,
+          },
+          {
+            src: manualPage2,
+            alt: "Workshop exercise guide page 2",
+            caption: "Workshop exercise guide - page 2",
+            aspectRatio: "auto" as const,
+            span: "wide" as const,
+          },
+        ],
       },
     ],
   },
