@@ -9,6 +9,11 @@ if (typeof globalThis.IntersectionObserver === "undefined") {
   } as unknown as typeof IntersectionObserver;
 }
 
+// Polyfill Element.scrollTo for jsdom
+if (typeof Element.prototype.scrollTo === "undefined") {
+  Element.prototype.scrollTo = () => {};
+}
+
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: (query: string) => ({
