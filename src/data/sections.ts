@@ -1,4 +1,4 @@
-import { GalleryImage } from "@/components/portfolio/ImageGallery";
+import type { GalleryImage } from "@/components/portfolio/ImageGallery";
 
 // Image imports
 import connectionBlock1 from "@/assets/connection block 1.jpeg";
