@@ -11,12 +11,12 @@ describe("HomeView", () => {
 
   it('renders "About Me" heading', () => {
     render(<HomeView />);
-    expect(screen.getByText(/About [Mm]e/)).toBeTruthy();
+    expect(screen.getByText(/About [Mm]e/)).toBeInTheDocument();
   });
 
   it('renders "Richard" from the about me text', () => {
     render(<HomeView />);
-    expect(screen.getByText(/Richard/)).toBeTruthy();
+    expect(screen.getByRole("article")).toHaveTextContent(/Richard/i);
   });
 
   it("renders the course description", () => {
@@ -27,8 +27,6 @@ describe("HomeView", () => {
   it("renders the profile photo with appropriate alt text", () => {
     render(<HomeView />);
     const img = screen.getByRole("img");
-    expect(img).toBeTruthy();
-    const alt = (img as HTMLImageElement).alt.toLowerCase();
-    expect(alt.includes("richard") || alt.includes("profile")).toBe(true);
+    expect(img).toHaveAttribute("alt", expect.stringMatching(/richard|profile/i));
   });
 });

@@ -46,7 +46,8 @@ const HomeView = () => {
           <div className="flex-shrink-0 self-center md:self-start w-36 h-36 md:w-48 md:h-48 rounded-full bg-secondary overflow-hidden border-2 border-border mt-6 md:mt-14">
             <img
               src={meInCorkNature}
-              alt="Profile"
+              alt="Richard Alexander, portfolio author"
+              loading="lazy"
               className="w-full h-full object-cover"
             />
           </div>
