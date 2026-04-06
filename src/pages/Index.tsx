@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { sections } from "@/data/sections";
 import Sidebar from "@/components/portfolio/Sidebar";
 import HomeView from "@/components/portfolio/HomeView";
@@ -40,11 +41,21 @@ export default function Index() {
     <div className="portfolio-layout">
       <Sidebar activeId={activeId} onNavigate={handleNavigate} />
       <main className="portfolio-content" ref={contentRef}>
-        {activeSection ? (
-          <SectionView section={activeSection} />
-        ) : (
-          <HomeView />
-        )}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeId}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.22, ease: "easeOut" }}
+          >
+            {activeSection ? (
+              <SectionView section={activeSection} />
+            ) : (
+              <HomeView />
+            )}
+          </motion.div>
+        </AnimatePresence>
       </main>
     </div>
   );

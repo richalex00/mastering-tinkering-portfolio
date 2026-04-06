@@ -81,7 +81,7 @@ interface SectionViewProps {
 }
 
 const SectionView = ({ section }: SectionViewProps) => {
-  const { id, title, date, reflection, images, subsections, postTitle, postReflection } = section;
+  const { id, title, reflection, images, subsections, postTitle, postReflection } = section;
 
   return (
     <article className="px-8 md:px-12 pt-10 pb-20 max-w-3xl mx-auto w-full">
@@ -93,7 +93,6 @@ const SectionView = ({ section }: SectionViewProps) => {
         className="mb-8"
       >
         <p className="gallery-label mb-1">{id}</p>
-        {date && <p className="gallery-caption mb-4">{date}</p>}
         <h1 className="gallery-heading-lg mb-6">{title}</h1>
         {renderReflection(reflection)}
       </motion.div>
