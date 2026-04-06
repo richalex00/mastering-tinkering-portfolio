@@ -98,6 +98,10 @@
     @apply border-border;
   }
 
+  html, body {
+    height: 100%;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -170,6 +174,23 @@
   .gallery-image {
     @apply w-full h-auto object-cover;
     background: hsl(var(--muted));
+  }
+
+  /* Two-panel portfolio layout */
+  .portfolio-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* min-height: 0 is required for grid children to scroll internally */
+  .portfolio-layout > * {
+    min-height: 0;
+  }
+
+  .portfolio-content {
+    overflow-y: auto;
   }
 }
 
