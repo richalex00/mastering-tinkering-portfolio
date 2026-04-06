@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { sections } from "@/data/sections";
 import Sidebar from "@/components/portfolio/Sidebar";
 import HomeView from "@/components/portfolio/HomeView";
@@ -13,6 +13,11 @@ function getInitialSection(): string {
 
 export default function Index() {
   const [activeId, setActiveId] = useState<string>(getInitialSection);
+  const contentRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    contentRef.current?.scrollTo({ top: 0 });
+  }, [activeId]);
 
   function handleNavigate(id: string) {
     setActiveId(id);
@@ -34,7 +39,7 @@ export default function Index() {
   return (
     <div className="portfolio-layout">
       <Sidebar activeId={activeId} onNavigate={handleNavigate} />
-      <main className="portfolio-content">
+      <main className="portfolio-content" ref={contentRef}>
         {activeSection ? (
           <SectionView section={activeSection} />
         ) : (
