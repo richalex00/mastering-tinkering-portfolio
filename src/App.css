@@ -1,5 +1,5 @@
 #root {
-  /* Layout constraints cleared to allow full-viewport two-panel layout */
+  height: 100%;
 }
 
 .logo {
