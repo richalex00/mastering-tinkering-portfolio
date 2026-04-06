@@ -6,27 +6,30 @@ import Sidebar from "@/components/portfolio/Sidebar";
 describe("Sidebar", () => {
   it('renders "Mastering Tinkering" in the sidebar header', () => {
     render(<Sidebar activeId="home" onNavigate={vi.fn()} />);
-    expect(screen.getByText("Mastering Tinkering")).toBeTruthy();
+    expect(screen.getByText("Mastering Tinkering")).toBeInTheDocument();
   });
 
   it('renders "Richard Alexander" in the sidebar header', () => {
     render(<Sidebar activeId="home" onNavigate={vi.fn()} />);
-    expect(screen.getByText(/richard alexander/i)).toBeTruthy();
+    expect(screen.getByText(/richard alexander/i)).toBeInTheDocument();
   });
 
   it("renders a nav item for section 1.1", () => {
     render(<Sidebar activeId="home" onNavigate={vi.fn()} />);
-    expect(screen.getByText("1.1")).toBeTruthy();
+    const btn = screen.getByRole("button", { name: /1\.1/i });
+    expect(btn).toBeInTheDocument();
   });
 
   it("renders a nav item for section 2.2", () => {
     render(<Sidebar activeId="home" onNavigate={vi.fn()} />);
-    expect(screen.getByText("2.2")).toBeTruthy();
+    const btn = screen.getByRole("button", { name: /2\.2/i });
+    expect(btn).toBeInTheDocument();
   });
 
   it("renders a nav item for section 5.2", () => {
     render(<Sidebar activeId="home" onNavigate={vi.fn()} />);
-    expect(screen.getByText("5.2")).toBeTruthy();
+    const btn = screen.getByRole("button", { name: /5\.2/i });
+    expect(btn).toBeInTheDocument();
   });
 
   it("marks the active item with aria-current=page", () => {
@@ -51,7 +54,13 @@ describe("Sidebar", () => {
 
   it('renders "About Me" as the home nav item', () => {
     render(<Sidebar activeId="home" onNavigate={vi.fn()} />);
-    expect(screen.getByText("About Me")).toBeTruthy();
+    expect(screen.getByText("About Me")).toBeInTheDocument();
+  });
+
+  it("marks home item as active when activeId is 'home'", () => {
+    render(<Sidebar activeId="home" onNavigate={vi.fn()} />);
+    const homeBtn = screen.getByRole("button", { name: /about me/i });
+    expect(homeBtn).toHaveAttribute("aria-current", "page");
   });
 
   it('calls onNavigate("home") when the home nav item is clicked', () => {

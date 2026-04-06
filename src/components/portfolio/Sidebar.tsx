@@ -17,7 +17,7 @@ const groupKeys = Object.keys(grouped).sort((a, b) => Number(a) - Number(b));
 
 const Sidebar = ({ activeId, onNavigate }: SidebarProps) => {
   return (
-    <div className="h-full flex flex-col bg-[hsl(40,25%,95%)] border-r border-border">
+    <aside className="h-full flex flex-col bg-[hsl(40,25%,95%)] border-r border-border">
       {/* Header */}
       <div className="px-5 pt-6 pb-4 shrink-0">
         <p className="font-serif text-lg leading-snug text-[hsl(30,12%,18%)]">
@@ -85,7 +85,7 @@ const Sidebar = ({ activeId, onNavigate }: SidebarProps) => {
           EIT Digital · HCI · 2026
         </p>
       </div>
-    </div>
+    </aside>
   );
 };
 
