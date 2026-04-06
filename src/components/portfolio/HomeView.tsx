@@ -15,7 +15,7 @@ const HomeView = () => {
         <h1 className="gallery-heading-lg mb-6">Mastering Tinkering</h1>
         <p className="gallery-body text-muted-foreground max-w-2xl">
           This portfolio documents my journey through{" "}
-          <em className="text-foreground">Mastering Tinkering</em>, a
+          <em className="text-foreground"> Mastering Tinkering</em>, a
           semester-long course centered on learning through making, iteration,
           and hands-on experimentation. Organised week by week, it brings
           together assignments, collaborative work, and personal reflections

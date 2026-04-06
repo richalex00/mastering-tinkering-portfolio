@@ -19,6 +19,11 @@ describe("HomeView", () => {
     expect(screen.getByText(/Richard/)).toBeTruthy();
   });
 
+  it("renders the course description", () => {
+    render(<HomeView />);
+    expect(screen.getByText(/documents my journey/i)).toBeInTheDocument();
+  });
+
   it("renders the profile photo with appropriate alt text", () => {
     render(<HomeView />);
     const img = screen.getByRole("img");
