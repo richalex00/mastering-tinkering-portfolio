@@ -11,7 +11,7 @@ const renderHighlightedText = (text: string) => {
       const boldMatch = segment.match(/^\*\*([^*]+)\*\*$/);
       if (boldMatch) {
         return (
-          <span key={`bold-${index}`} className="font-medium text-primary">
+          <span key={`${boldMatch[1]}-${index}`} className="font-medium text-primary">
             {boldMatch[1]}
           </span>
         );
@@ -20,7 +20,7 @@ const renderHighlightedText = (text: string) => {
       if (linkMatch) {
         return (
           <a
-            key={`link-${index}`}
+            key={`${linkMatch[1]}-${index}`}
             href={linkMatch[2]}
             target="_blank"
             rel="noreferrer"
@@ -36,6 +36,7 @@ const renderHighlightedText = (text: string) => {
 
 // Renders multi-paragraph reflection text, treating **heading** lines specially
 const renderReflection = (text: string) => {
+  if (!text) return null;
   const bodyClass =
     "gallery-body max-w-2xl text-muted-foreground leading-relaxed whitespace-pre-line";
 

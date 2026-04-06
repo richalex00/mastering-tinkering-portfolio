@@ -509,22 +509,22 @@ This metaphor focuses on the programming concepts of request/response communicat
     title: "Overview on Design Methods",
     date: "March 20th, 2026",
     reflection: `**Brainstorming**
-  A creative technique used to generate a large number of ideas quickly without judgment. It focuses on divergent thinking and exploring many possible solutions.
+A creative technique used to generate a large number of ideas quickly without judgment. It focuses on divergent thinking and exploring many possible solutions.
 
-  **Co-design**
-  A collaborative design approach where users or stakeholders actively participate in the design process, contributing ideas, feedback, and decisions.
+**Co-design**
+A collaborative design approach where users or stakeholders actively participate in the design process, contributing ideas, feedback, and decisions.
 
-  **Critical Design**
-  A design approach that challenges assumptions and provokes reflection by creating speculative or provocative artifacts rather than practical solutions.
+**Critical Design**
+A design approach that challenges assumptions and provokes reflection by creating speculative or provocative artifacts rather than practical solutions.
 
-  **Research Through Design**
-  A method where knowledge is generated through the process of designing and making artifacts. The design process itself is used as a form of research.
+**Research Through Design**
+A method where knowledge is generated through the process of designing and making artifacts. The design process itself is used as a form of research.
 
-  **Rapid Prototyping**
-  The quick creation of physical or digital models to test ideas, allowing fast experimentation and iteration.
+**Rapid Prototyping**
+The quick creation of physical or digital models to test ideas, allowing fast experimentation and iteration.
 
-  **Iterative Design**
-  A cyclical design process where ideas are repeatedly tested, evaluated, and improved over multiple versions.`,
+**Iterative Design**
+A cyclical design process where ideas are repeatedly tested, evaluated, and improved over multiple versions.`,
     images: [
       {
         src: designMethodsBrainstorm,
