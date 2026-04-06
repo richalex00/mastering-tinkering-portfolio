@@ -84,7 +84,7 @@ const SectionView = ({ section }: SectionViewProps) => {
   const { id, title, date, reflection, images, subsections, postTitle, postReflection } = section;
 
   return (
-    <article className="px-8 md:px-12 pt-10 pb-20 max-w-3xl">
+    <article className="px-8 md:px-12 pt-10 pb-20 max-w-3xl mx-auto w-full">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}

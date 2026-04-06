@@ -4,7 +4,7 @@ import meInCorkNature from "@/assets/me_in_cork_nature.jpeg";
 
 const HomeView = () => {
   return (
-    <article className="px-8 md:px-12 pt-10 pb-20 max-w-3xl">
+    <article className="px-8 md:px-12 pt-10 pb-20 max-w-3xl mx-auto w-full">
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}

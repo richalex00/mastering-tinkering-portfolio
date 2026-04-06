@@ -184,9 +184,13 @@
     overflow: hidden;
   }
 
+  /* min-height: 0 is required for grid children to scroll internally */
+  .portfolio-layout > * {
+    min-height: 0;
+  }
+
   .portfolio-content {
     overflow-y: auto;
-    height: 100%;
   }
 }
 
