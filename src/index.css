@@ -171,6 +171,19 @@
     @apply w-full h-auto object-cover;
     background: hsl(var(--muted));
   }
+
+  /* Two-panel portfolio layout */
+  .portfolio-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .portfolio-content {
+    overflow-y: auto;
+    height: 100vh;
+  }
 }
 
 @layer utilities {
