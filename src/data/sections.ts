@@ -14,6 +14,8 @@ import groupProjectBioSensor from "@/assets/group project bio sensor.png";
 import manualPage1 from "@/assets/manual page 1.png";
 import manualPage2 from "@/assets/manual page 2.png";
 import poster from "@/assets/poster.png";
+import newPoster from "@/assets/new poster.png";
+import brokenSystemSketch from "@/assets/broken system sketch.jpeg";
 import hex1 from "@/assets/hex1.jpeg";
 import hex2 from "@/assets/hex2.jpeg";
 import hex3 from "@/assets/hex3.jpeg";
@@ -658,7 +660,15 @@ Scaffolding supports reasoning without directing toward immediate solutions.
 - Describe a bug without resolving it
 - Introduce new faults and observe system changes
 - Compare different investigative strategies`,
-        images: [],
+        images: [
+          {
+            src: brokenSystemSketch,
+            alt: "Broken system sketch",
+            caption: "Broken system sketch",
+            aspectRatio: "auto",
+            span: "wide",
+          },
+        ],
       },
     ],
   },
@@ -875,7 +885,7 @@ For instrument replacement, we will use a buzzer component that changes pitch ba
 The poster captures how body movement is translated into sound through sensor input and microcontroller processing, while also outlining the learning pathway for participants through guided exercises and support materials.`,
     images: [
       {
-        src: poster,
+        src: newPoster,
         alt: "Complete design digital poster",
         caption: "Digital poster",
         aspectRatio: "auto",
@@ -903,6 +913,47 @@ The poster captures how body movement is translated into sound through sensor in
             span: "wide",
           },
         ],
+      },
+    ],
+  },
+  {
+    id: "5.4",
+    title: "Group Project - Evaluation",
+    reflection: `A structured evaluation of our group tinkering playground, carried out with another team as test participants. The focus is on critical performance — high ceiling, wide walls — rather than surface-level confirmation.`,
+    images: [],
+    subsections: [
+      {
+        title: "Design Description",
+        reflection: `**Overview**
+A summary of the final design with key iteration steps and the reasoning behind major design choices.
+
+**Iteration Steps**
+TBD — document the key changes made during the design process and what motivated them.
+
+**Design Choices**
+TBD — explain the critical decisions (materials, interaction model, scaffolding approach) and why they were made.`,
+        images: [],
+      },
+      {
+        title: "Evaluation Method",
+        reflection: `**Evaluation Criteria**
+TBD — define what success looks like in terms of both outcome (what participants produce or learn) and use (how they engage with the playground).
+
+**Method**
+TBD — describe how the evaluation was conducted. Who participated, what tasks were given, what was observed and recorded.`,
+        images: [],
+      },
+      {
+        title: "Evaluation Results",
+        reflection: `**High Ceiling**
+TBD — what did the most engaged participants manage to achieve? Where did the design enable depth?
+
+**Wide Walls**
+TBD — what range of approaches did participants take? Did the design support multiple valid paths?
+
+**Critical Analysis**
+TBD — what did not work, what was unclear, and what would need to change in a next iteration.`,
+        images: [],
       },
     ],
   },
